@@ -9,7 +9,7 @@ export const brand = {
 export const nav = {
   links: [
     { label: '주요 기능', href: '#services' },
-    { label: '성공 사례', href: '#testimonials' },
+    { label: '리뷰', href: '#testimonials' },
     { label: '요금제', href: '#pricing' },
     { label: '도움말', href: '#help' },
   ],
@@ -26,13 +26,6 @@ export const hero = {
   description:
     '직전취소·노쇼가 발생하면 알림 한 번으로 대기 고객이 스스로 예약합니다.',
   ctaLabel: '문의하기',
-  avatars: ['S', 'J', 'M'],
-  social: '500+ 스튜디오가 선택함',
-  stats: [
-    { value: '98%', label: '노쇼 예약 복구율' },
-    { value: '2.4시간', label: '하루 평균 절약 시간' },
-    { value: '120%', label: '매출 성장 평균' },
-  ],
 };
 
 export const trustBar = {
@@ -63,7 +56,7 @@ export const footer = {
       links: [
         { label: '주요 기능', href: '#services' },
         { label: '요금제', href: '#pricing' },
-        { label: '성공 사례', href: '#testimonials' },
+        { label: '리뷰', href: '#testimonials' },
       ],
     },
     {
@@ -84,6 +77,6 @@ export const footer = {
       ],
     },
   ],
-  business: '상호: (주)필엠티 · 대표: 홍길동 · 사업자등록번호: 000-00-00000',
+  business: '상호: 앗취 · 대표: 홍길동 · 사업자등록번호: 000-00-00000',
   copyright: `© ${new Date().getFullYear()} FillEmpty. All rights reserved.`,
 };

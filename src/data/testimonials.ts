@@ -9,12 +9,12 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote: '당일 취소는 사실 너무 많고요... 매출 순 손실이 가장 큰 문제예요',
-    name: '서하님',
+    name: '',
     role: '8년차 헤어 디자이너',
   },
   {
     quote: '펌·염색 손님이 직전취소하면 2~3시간이 통째로 비잖아요. 다른 손님들이 그 시간대 앞뒤로 예약을 못하셔서 배로 손해를 보는 거죠',
-    name: '영준님',
+    name: '',
     role: '3년차 헤어샵 원장',
   },
   {
