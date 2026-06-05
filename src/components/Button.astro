@@ -1,0 +1,31 @@
+---
+// 버튼 — href가 있으면 <a>, 없으면 <button>으로 렌더링
+interface Props {
+  variant?: 'primary' | 'outline' | 'ghost';
+  href?: string;
+  type?: 'button' | 'submit';
+  class?: string;
+}
+const { variant = 'primary', href, type = 'button', class: className = '' } = Astro.props;
+
+const base = 'inline-flex items-center justify-center gap-3 font-bold transition-all';
+const variants = {
+  // 메인 CTA: 코랄 + 글로우
+  primary: 'cta-glow rounded-2xl bg-coral px-10 py-5 text-lg text-white',
+  // 아웃라인 pill (hover 시 반전)
+  outline:
+    'rounded-full border-2 border-ink px-5 py-2.5 text-sm font-semibold hover:bg-ink hover:text-white',
+  // 텍스트 버튼
+  ghost: 'px-5 py-2 text-sm font-medium text-gray-600 hover:text-gray-900',
+};
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  href={href}
+  type={href ? undefined : type}
+  class:list={[base, variants[variant], className]}
+>
+  <slot />
+</Tag>

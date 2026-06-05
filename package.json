@@ -1,0 +1,21 @@
+{
+  "name": "fillempty-landing",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.6.0",
+    "@phosphor-icons/web": "^2.1.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20"
+  }
+}

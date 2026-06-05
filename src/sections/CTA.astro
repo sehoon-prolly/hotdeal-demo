@@ -1,0 +1,32 @@
+---
+import Section from '../components/Section.astro';
+import SectionBadge from '../components/SectionBadge.astro';
+import Button from '../components/Button.astro';
+import { cta } from '../data/site';
+---
+
+<Section class="text-center">
+  <div class="mx-auto max-w-3xl">
+    <SectionBadge>{cta.badge}</SectionBadge>
+    <h2 class="mb-6 text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">
+      {cta.titlePre}<br />{cta.titlePost}
+    </h2>
+    <p class="mb-4 text-lg font-light leading-relaxed text-gray-500">{cta.sub1}</p>
+    <p class="mb-10 text-base font-light leading-relaxed text-gray-400">{cta.sub2}</p>
+
+    <Button variant="primary" href="#apply">
+      {cta.buttonLabel}
+      <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
+    </Button>
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-gray-400">
+      {
+        cta.badges.map((b) => (
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-check-circle text-coral" aria-hidden="true" /> {b}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</Section>

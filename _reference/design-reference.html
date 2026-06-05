@@ -1,0 +1,1776 @@
+<html vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet" vid="5">
+    <script src="https://unpkg.com/@phosphor-icons/web" vid="6"></script>
+    <style vid="7">
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #FDFBF7;
+            color: #1A1A1A;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .peach-coral {
+            background-color: #FF8B72;
+        }
+
+        .text-peach-coral {
+            color: #FF8B72;
+        }
+
+        .cta-glow {
+            box-shadow: 0 10px 25px -5px rgba(255, 139, 114, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-glow:hover {
+            box-shadow: 0 15px 30px -5px rgba(255, 139, 114, 0.6);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fillBooking {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulseEmpty {
+            0%, 100% {
+                border-color: rgba(255, 139, 114, 0.3);
+                background-color: rgba(255, 139, 114, 0.02);
+            }
+            50% {
+                border-color: rgba(255, 139, 114, 0.6);
+                background-color: rgba(255, 139, 114, 0.08);
+            }
+        }
+
+        .booking-card {
+            animation: fillBooking 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2s;
+            opacity: 0;
+        }
+
+        .empty-slot {
+            animation: pulseEmpty 2s ease-in-out infinite;
+        }
+
+        .empty-label {
+            transition: opacity 0.3s ease;
+        }
+
+        .dashboard-container:hover .empty-label {
+            opacity: 0;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .problem-card {
+            transition: all 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+        }
+    </style>
+
+  <style type="text/css">
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}/*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.inset-0 {
+  inset: 0px;
+}
+.-bottom-10 {
+  bottom: -2.5rem;
+}
+.-left-10 {
+  left: -2.5rem;
+}
+.-right-10 {
+  right: -2.5rem;
+}
+.-top-10 {
+  top: -2.5rem;
+}
+.bottom-8 {
+  bottom: 2rem;
+}
+.right-8 {
+  right: 2rem;
+}
+.z-0 {
+  z-index: 0;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-20 {
+  z-index: 20;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-20 {
+  margin-bottom: 5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
+.ml-4 {
+  margin-left: 1rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-2 {
+  height: 0.5rem;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-64 {
+  height: 16rem;
+}
+.h-\[164px\] {
+  height: 164px;
+}
+.h-full {
+  height: 100%;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-12 {
+  width: 3rem;
+}
+.w-16 {
+  width: 4rem;
+}
+.w-2 {
+  width: 0.5rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-full {
+  width: 100%;
+}
+.max-w-3xl {
+  max-width: 48rem;
+}
+.max-w-\[1440px\] {
+  max-width: 1440px;
+}
+.max-w-\[620px\] {
+  max-width: 620px;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.translate-y-2 {
+  --tw-translate-y: 0.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.animate-\[fillBooking_0\.5s_ease-out_2\.8s_forwards\] {
+  animation: fillBooking 0.5s ease-out 2.8s forwards;
+}
+@keyframes ping {
+
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-\[80px_1fr\] {
+  grid-template-columns: 80px 1fr;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-1\.5 {
+  gap: 0.375rem;
+}
+.gap-10 {
+  gap: 2.5rem;
+}
+.gap-12 {
+  gap: 3rem;
+}
+.gap-16 {
+  gap: 4rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+.-space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(-0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-\[74px\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(74px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(74px * var(--tw-space-y-reverse));
+}
+.space-y-\[90px\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(90px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(90px * var(--tw-space-y-reverse));
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.rounded-\[32px\] {
+  border-radius: 32px;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.border {
+  border-width: 1px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.border-\[\#FDFBF7\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(253 251 247 / var(--tw-border-opacity, 1));
+}
+.border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
+}
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+.border-gray-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(249 250 251 / var(--tw-border-opacity, 1));
+}
+.border-gray-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(17 24 39 / var(--tw-border-opacity, 1));
+}
+.border-white\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+.border-white\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+.border-white\/50 {
+  border-color: rgb(255 255 255 / 0.5);
+}
+.bg-\[\#E8AF55\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 175 85 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#FBFBFB\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 251 251 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#FF8B7210\] {
+  background-color: #FF8B7210;
+}
+.bg-\[\#FF8B7215\] {
+  background-color: #FF8B7215;
+}
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
+}
+.bg-blue-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
+}
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
+}
+.bg-purple-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 232 255 / var(--tw-bg-opacity, 1));
+}
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity, 1));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity, 1));
+}
+.p-10 {
+  padding: 2.5rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.p-8 {
+  padding: 2rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.pb-24 {
+  padding-bottom: 6rem;
+}
+.pl-6 {
+  padding-left: 1.5rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
+}
+.pt-12 {
+  padding-top: 3rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
+}
+.pt-4 {
+  padding-top: 1rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
+}
+.pt-8 {
+  padding-top: 2rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.leading-\[1\.25\] {
+  line-height: 1.25;
+}
+.leading-\[1\.2\] {
+  line-height: 1.2;
+}
+.leading-none {
+  line-height: 1;
+}
+.leading-relaxed {
+  line-height: 1.625;
+}
+.leading-snug {
+  line-height: 1.375;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+.text-\[\#1A1A1A\] {
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+}
+.text-\[\#FF8B72\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 139 114 / var(--tw-text-opacity, 1));
+}
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+}
+.text-purple-600 {
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity, 1));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-white\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-75 {
+  opacity: 0.75;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+.opacity-\[0\.05\] {
+  opacity: 0.05;
+}
+.opacity-\[0\.08\] {
+  opacity: 0.08;
+}
+.shadow-\[0_32px_64px_-12px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
+  --tw-shadow: 0 32px 64px -12px rgba(0,0,0,0.1);
+  --tw-shadow-colored: 0 32px 64px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-green-200 {
+  --tw-shadow-color: #bbf7d0;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur-3xl {
+  --tw-blur: blur(64px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-filter {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-700 {
+  transition-duration: 700ms;
+}
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-gray-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+.hover\:text-gray-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.hover\:grayscale-0:hover {
+  --tw-grayscale: grayscale(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+@media (min-width: 640px) {
+
+  .sm\:w-auto {
+    width: auto;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+
+  .md\:flex {
+    display: flex;
+  }
+}
+@media (min-width: 1024px) {
+
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:gap-24 {
+    gap: 6rem;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}* {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
+
+    *::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+  </style></head>
+<body class="w-full min-h-screen" vid="8">
+
+    
+    <nav class="flex items-center justify-between px-12 py-8 w-full" vid="9">
+        <div class="flex items-center gap-2" vid="10">
+            <div class="w-10 h-10 peach-coral rounded-xl flex items-center justify-center shadow-sm" vid="11">
+                <i class="ph-fill ph-calendar-check text-white text-2xl" vid="12"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-[#1A1A1A]" vid="13">FillEmpty</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-600" vid="14">
+            <a href="#" class="hover:text-peach-coral transition-colors" vid="15">주요 기능</a>
+            <a href="#" class="hover:text-peach-coral transition-colors" vid="16">성공 사례</a>
+            <a href="#" class="hover:text-peach-coral transition-colors" vid="17">요금제</a>
+            <a href="#" class="hover:text-peach-coral transition-colors" vid="18">도움말</a>
+        </div>
+
+        <div class="flex items-center gap-4" vid="19">
+            <button class="px-5 py-2 text-sm font-medium text-gray-600 hover:text-gray-900" vid="20">로그인</button>
+            <button class="px-5 py-2.5 text-sm font-semibold border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all" vid="21">파트너 신청하기</button>
+        </div>
+    </nav>
+
+    
+    <main class="grid grid-cols-1 lg:grid-cols-2 gap-16 px-12 pt-12 pb-24 items-center max-w-[1440px] mx-auto" vid="22">
+        <div class="max-w-xl" vid="23">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF8B7215] text-[#FF8B72] text-xs font-bold uppercase tracking-wider mb-6" vid="24">
+                <span class="relative flex h-2 w-2" vid="25">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-peach-coral opacity-75" vid="26"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 peach-coral" vid="27"></span>
+                </span>
+                Automated Booking AI
+            </div>
+            
+            <h1 class="text-5xl lg:text-6xl font-bold leading-[1.2] text-[#1A1A1A] mb-8" vid="28">
+                노쇼가 뜨는 순간,<br vid="29">
+                <span class="text-peach-coral" vid="30">30분 안에</span> 예약이 채워집니다.
+            </h1>
+            
+            <p class="text-lg lg:text-xl text-gray-500 leading-relaxed mb-10 font-light" vid="31">
+                직전취소·노쇼가 발생하면 알림 한 번으로 대기 고객이 스스로 예약합니다. 인스타 올리고, 단골한테 전화 돌리고, 그래도 결국 비는 그 2시간 — 이제 시스템이 대신합니다.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 items-center" vid="32">
+                <button class="cta-glow peach-coral text-white px-10 py-5 rounded-2xl text-lg font-bold flex items-center gap-3 w-full sm:w-auto justify-center" vid="33">
+                    14일 무료로 시작하기 <i class="ph ph-arrow-right font-bold" vid="34"></i>
+                </button>
+                <div class="flex -space-x-3 items-center ml-4" vid="35">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#FDFBF7] bg-gray-200 flex items-center justify-center text-xs font-bold" vid="36">S</div>
+                    <div class="w-10 h-10 rounded-full border-2 border-[#FDFBF7] bg-peach-coral text-white flex items-center justify-center text-xs font-bold" vid="37">J</div>
+                    <div class="w-10 h-10 rounded-full border-2 border-[#FDFBF7] bg-gray-800 text-white flex items-center justify-center text-xs font-bold" vid="38">M</div>
+                    <span class="pl-6 text-sm text-gray-500 font-medium" vid="39">500+ 스튜디오가 선택함</span>
+                </div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-3 gap-8 border-t border-gray-200 pt-8" vid="40">
+                <div vid="41">
+                    <div class="text-2xl font-bold" vid="42">98%</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-tighter" vid="43">노쇼 예약 복구율</div>
+                </div>
+                <div vid="44">
+                    <div class="text-2xl font-bold" vid="45">2.4시간</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-tighter" vid="46">하루 평균 절약 시간</div>
+                </div>
+                <div vid="47">
+                    <div class="text-2xl font-bold" vid="48">120%</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-tighter" vid="49">매출 성장 평균</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative dashboard-container" vid="50">
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-peach-coral opacity-[0.08] rounded-full blur-3xl" vid="51"></div>
+            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-[#E8AF55] opacity-[0.05] rounded-full blur-3xl" vid="52"></div>
+
+            <div class="relative w-full max-w-[620px] aspect-[4/3] bg-white rounded-[32px] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100" vid="53">
+                <div class="flex items-center justify-between px-8 py-6 border-b border-gray-50 bg-[#FBFBFB]" vid="54">
+                    <div class="flex items-center gap-4" vid="55">
+                        <div class="flex gap-1.5" vid="56">
+                            <div class="w-3 h-3 rounded-full bg-red-200" vid="57"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-200" vid="58"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-200" vid="59"></div>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 flex items-center gap-2" vid="60">
+                            <i class="ph ph-calendar text-gray-400" vid="61"></i>
+                            2024년 3월 24일 (일)
+                        </h3>
+                    </div>
+                    <div class="flex items-center gap-2" vid="62">
+                        <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-400" vid="63"><i class="ph ph-caret-left" vid="64"></i></button>
+                        <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-400" vid="65"><i class="ph ph-caret-right" vid="66"></i></button>
+                    </div>
+                </div>
+
+                <div class="p-8 h-full flex flex-col" vid="67">
+                    <div class="grid grid-cols-[80px_1fr] gap-6 relative flex-grow" vid="68">
+                        <div class="space-y-[74px] pt-1" vid="69">
+                            <div class="text-xs font-medium text-gray-400 text-right" vid="70">오전 11:00</div>
+                            <div class="text-xs font-medium text-gray-400 text-right" vid="71">오후 12:00</div>
+                            <div class="text-xs font-medium text-gray-400 text-right" vid="72">오후 01:00</div>
+                            <div class="text-xs font-medium text-gray-400 text-right" vid="73">오후 02:00</div>
+                            <div class="text-xs font-medium text-gray-400 text-right" vid="74">오후 03:00</div>
+                        </div>
+
+                        <div class="relative space-y-4" vid="75">
+                            <div class="absolute inset-0 space-y-[90px] pt-3 pointer-events-none" vid="76">
+                                <div class="w-full border-b border-gray-100" vid="77"></div>
+                                <div class="w-full border-b border-gray-100" vid="78"></div>
+                                <div class="w-full border-b border-gray-100" vid="79"></div>
+                                <div class="w-full border-b border-gray-100" vid="80"></div>
+                                <div class="w-full border-b border-gray-100" vid="81"></div>
+                            </div>
+
+                            <div class="relative z-10 w-full h-20 bg-gray-50 border border-gray-100 rounded-xl p-4 flex items-center gap-4" vid="82">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold" vid="83">K</div>
+                                <div vid="84">
+                                    <div class="text-sm font-semibold" vid="85">김서연 고객님</div>
+                                    <div class="text-[10px] text-gray-400 uppercase tracking-widest" vid="86">Hair Cut &amp; Perm</div>
+                                </div>
+                                <div class="ml-auto text-[10px] font-bold text-blue-500 bg-blue-50 px-2 py-0.5 rounded uppercase" vid="87">Confirmed</div>
+                            </div>
+
+                            <div class="relative w-full h-[164px] rounded-xl flex items-center justify-center" vid="88">
+                                <div class="absolute inset-0 empty-slot border-2 border-dashed rounded-xl z-0" vid="89"></div>
+                                <div class="empty-label z-10 text-center" vid="90">
+                                    <div class="w-10 h-10 rounded-full bg-[#FF8B7215] flex items-center justify-center mx-auto mb-2" vid="91">
+                                        <i class="ph ph-warning-circle text-peach-coral text-xl" vid="92"></i>
+                                    </div>
+                                    <p class="text-xs font-semibold text-peach-coral" vid="93">취소 발생 (2시간)</p>
+                                    <p class="text-[10px] text-gray-400 mt-1" vid="94">대기 고객 12명 알림 전송됨</p>
+                                </div>
+
+                                <div class="booking-card absolute inset-0 z-20 peach-coral rounded-xl p-6 shadow-xl flex flex-col justify-between" vid="95">
+                                    <div class="flex justify-between items-start" vid="96">
+                                        <div class="flex items-center gap-3" vid="97">
+                                            <div class="w-12 h-12 rounded-full bg-white/20 text-white flex items-center justify-center font-bold text-lg border border-white/30" vid="98">L</div>
+                                            <div vid="99">
+                                                <div class="text-white font-bold text-lg" vid="100">이민지 고객님</div>
+                                                <div class="text-white/70 text-xs font-medium" vid="101">Premium Hair Spa (2hr)</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30" vid="102">
+                                            <span class="text-white text-[10px] font-bold tracking-widest flex items-center gap-1.5" vid="103">
+                                                <i class="ph-fill ph-lightning" vid="104"></i> AI AUTOMATED
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between text-white border-t border-white/20 pt-4 mt-auto" vid="105">
+                                        <div class="text-xs font-medium opacity-90" vid="106">13:00 - 15:00</div>
+                                        <div class="flex items-center gap-2" vid="107">
+                                            <i class="ph ph-check-circle text-xl" vid="108"></i>
+                                            <span class="text-xs font-bold" vid="109">RE-BOOKED</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative z-10 w-full h-20 bg-gray-50 border border-gray-100 rounded-xl p-4 flex items-center gap-4 opacity-50" vid="110">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold" vid="111">P</div>
+                                <div vid="112">
+                                    <div class="text-sm font-semibold" vid="113">박지호 고객님</div>
+                                    <div class="text-[10px] text-gray-400" vid="114">Portrait Session</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-8 right-8 glass-panel rounded-2xl p-4 shadow-xl border border-white/50 flex items-center gap-4 translate-y-2 opacity-0 animate-[fillBooking_0.5s_ease-out_2.8s_forwards]" vid="115">
+                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-green-200" vid="116">
+                        <i class="ph ph-trend-up text-xl" vid="117"></i>
+                    </div>
+                    <div vid="118">
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none mb-1" vid="119">Estimated Earnings</p>
+                        <p class="text-lg font-bold text-gray-900" vid="120">+128,000원 <span class="text-green-500 text-sm font-medium ml-1" vid="121">복구완료</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <section class="py-32 px-12 max-w-[1440px] mx-auto" vid="122">
+        <div class="mb-20" vid="123">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF8B7215] text-peach-coral text-xs font-bold uppercase tracking-wider mb-6" vid="124">
+                02 Problem
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-[1.25]" vid="125">
+                월 노쇼 3건, 사장님 매장은<br vid="126"> 지금 괜찮으신가요?
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" vid="127">
+            
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="128">
+                <div class="w-16 h-16 rounded-2xl bg-[#FF8B7210] flex items-center justify-center mb-10" vid="129">
+                    <i class="ph ph-receipt-x text-peach-coral text-3xl" vid="130"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 leading-snug" vid="131">
+                    ① 노쇼 1건이 그날 매출<br vid="132"> 10만~18만 원을 통째로 지웁니다
+                </h3>
+                <div class="space-y-4 text-gray-500 leading-relaxed font-light" vid="133">
+                    <p vid="134">젤네일 1건(4~8만 원), 펌·염색 1건(12~18만 원) — 직전취소가 바로 삭제하는 매출입니다.</p>
+                    <p class="font-semibold text-gray-900 pt-2" vid="135">한 달에 3건만 노쇼가 나도 연간 손실은 180만 원을 넘습니다.</p>
+                </div>
+            </div>
+
+            
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="136">
+                <div class="w-16 h-16 rounded-2xl bg-[#FF8B7210] flex items-center justify-center mb-10" vid="137">
+                    <i class="ph ph-phone-call text-peach-coral text-3xl" vid="138"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 leading-snug" vid="139">
+                    ② 빈 슬롯을 채우려고 인스타 스토리·전화 3통… 결국 그냥 비는 날이 생깁니다
+                </h3>
+                <div class="space-y-4 text-gray-500 leading-relaxed font-light" vid="140">
+                    <p vid="141">취소 연락을 받고 인스타를 올려도 반응은 2~3시간 뒤에 오거나 없습니다. 그 사이 슬롯은 그냥 지나갑니다.</p>
+                    <p class="font-semibold text-gray-900 pt-2" vid="142">사장님 혼자 월평균 4시간 이상을 이 수작업에 씁니다.</p>
+                </div>
+            </div>
+
+            
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="143">
+                <div class="w-16 h-16 rounded-2xl bg-[#FF8B7210] flex items-center justify-center mb-10" vid="144">
+                    <i class="ph ph-shield-warning text-peach-coral text-3xl" vid="145"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 leading-snug" vid="146">
+                    ③ 예약금·위약금 정책은 고객이 떠날까봐 못 쓰고 있습니다
+                </h3>
+                <div class="space-y-4 text-gray-500 leading-relaxed font-light" vid="147">
+                    <p vid="148">헤어·네일 업장 10곳 중 7곳이 노쇼를 인지하면서도 예약금 정책을 도입하지 못하고 있습니다. 고객 마찰이 두렵기 때문입니다.</p>
+                    <p class="font-semibold text-gray-900 pt-2" vid="149">패널티 없이, 고객 마찰 없이도 빈 슬롯을 채울 방법이 따로 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="w-full px-12 py-12 bg-white/50 border-t border-gray-100 flex flex-wrap items-center justify-center gap-12 lg:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700" vid="150">
+        <div class="flex items-center gap-2" vid="151">
+            <i class="ph ph-camera-rotate text-3xl" vid="152"></i>
+            <span class="text-xl font-bold font-serif" vid="153">Aura Studio</span>
+        </div>
+        <div class="flex items-center gap-2" vid="154">
+            <i class="ph ph-scissors text-3xl" vid="155"></i>
+            <span class="text-xl font-bold font-serif" vid="156">Maison De Bloom</span>
+        </div>
+        <div class="flex items-center gap-2" vid="157">
+            <i class="ph ph-sparkle text-3xl" vid="158"></i>
+            <span class="text-xl font-bold font-serif" vid="159">Vogue Hair</span>
+        </div>
+        <div class="flex items-center gap-2" vid="160">
+            <i class="ph ph-flower-lotus text-3xl" vid="161"></i>
+            <span class="text-xl font-bold font-serif" vid="162">Pure Spa</span>
+        </div>
+        <div class="flex items-center gap-2" vid="163">
+            <i class="ph ph-aperture text-3xl" vid="164"></i>
+            <span class="text-xl font-bold font-serif" vid="165">Frame 24</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-32 px-12 max-w-[1440px] mx-auto" vid="166">
+        <div class="mb-20" vid="167">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF8B7215] text-peach-coral text-xs font-bold uppercase tracking-wider mb-6" vid="168">
+                03 Services
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-[1.25]" vid="169">
+                세 가지 방식으로 빈 슬롯 손실을 막습니다
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" vid="170">
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="171">
+                <div class="w-16 h-16 rounded-2xl bg-[#FF8B7210] flex items-center justify-center mb-10" vid="172">
+                    <i class="ph ph-lightning text-peach-coral text-3xl" vid="173"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 leading-snug" vid="174">
+                    ① 취소 감지 즉시 핫딜 알림 자동 발송
+                </h3>
+                <div class="space-y-4 text-gray-500 leading-relaxed font-light" vid="175">
+                    <p vid="176">노쇼·직전취소가 확인되면 3분 이내에 대기 고객에게 핫딜 알림이 자동으로 나갑니다. 문자 한 줄도 직접 쓸 필요 없습니다.</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100" vid="177">
+                        <p class="text-sm text-gray-400 font-medium" vid="178">핫딜 발송 후 <span class="text-peach-coral font-bold text-lg" vid="179">평균 26분</span> 내 슬롯 충전</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="180">
+                <div class="w-16 h-16 rounded-2xl bg-[#FF8B7210] flex items-center justify-center mb-10" vid="181">
+                    <i class="ph ph-users text-peach-coral text-3xl" vid="182"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 leading-snug" vid="183">
+                    ② 관심 고객 풀 자동 적립·관리
+                </h3>
+                <div class="space-y-4 text-gray-500 leading-relaxed font-light" vid="184">
+                    <p vid="185">"자리 나면 알려줘" 한 번이면 끝입니다. 이후 빈 슬롯이 생길 때마다 자동으로 연결됩니다. 평소 예약 잡기 어려웠던 잠재 단골이 매장 팬으로 전환됩니다.</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100" vid="186">
+                        <p class="text-sm text-gray-400 font-medium" vid="187">알림 수신 고객의 <span class="text-peach-coral font-bold text-lg" vid="188">43%</span> 가 실제 예약 전환</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="189">
+                <div class="w-16 h-16 rounded-2xl bg-[#FF8B7210] flex items-center justify-center mb-10" vid="190">
+                    <i class="ph ph-plugs text-peach-coral text-3xl" vid="191"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 leading-snug" vid="192">
+                    ③ 기존 예약 시스템 그대로 연동, 수작업 없는 모객
+                </h3>
+                <div class="space-y-4 text-gray-500 leading-relaxed font-light" vid="193">
+                    <p vid="194">네이버 예약, 카카오, 똑딱 등 지금 사용 중인 예약 시스템에 추가 설치 없이 연결됩니다. 사장님은 시술에만 집중하면 됩니다.</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100" vid="195">
+                        <p class="text-sm text-gray-400 font-medium" vid="196">월평균 모객 수작업 <span class="text-peach-coral font-bold text-lg" vid="197">4.2시간</span> 절감</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-32 px-12 max-w-[1440px] mx-auto" vid="198">
+        <div class="mb-20" vid="199">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF8B7215] text-peach-coral text-xs font-bold uppercase tracking-wider mb-6" vid="200">
+                04 Testimonials
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-[1.25]" vid="201">
+                실제 사장님들의 이야기
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" vid="202">
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="203">
+                <div class="mb-8" vid="204">
+                    <i class="ph ph-quotes text-peach-coral text-4xl" vid="205"></i>
+                </div>
+                <blockquote class="text-xl text-gray-800 leading-relaxed mb-8 font-medium" vid="206">
+                    "한 달에 노쇼가 4~5번씩 나는데, 그때마다 인스타 올리고 카카오 보내고... 그게 제일 스트레스였어요. 이거 쓰고 나서는 취소 뜨면 그냥 두면 되더라고요. 첫 달에 빈 슬롯 8건 중 7건을 채웠는데, 진짜 소름 돋았어요."
+                </blockquote>
+                <div class="mt-auto pt-6 border-t border-gray-100" vid="207">
+                    <p class="font-bold text-[#1A1A1A]" vid="208">이지수</p>
+                    <p class="text-sm text-gray-400 mt-1" vid="209">성수동 1인 네일샵 운영 3년차</p>
+                </div>
+            </div>
+
+            <div class="problem-card bg-white rounded-[32px] p-10 border border-gray-100 shadow-sm flex flex-col" vid="210">
+                <div class="mb-8" vid="211">
+                    <i class="ph ph-quotes text-peach-coral text-4xl" vid="212"></i>
+                </div>
+                <blockquote class="text-xl text-gray-800 leading-relaxed mb-8 font-medium" vid="213">
+                    "펌·염색 손님이 직전취소하면 2~3시간이 통째로 비잖아요. 그게 제일 아까웠는데. 지금은 취소 알림 뜨는 순간 자동으로 핫딜이 나가니까 저는 다음 손님 준비만 해요. 지난달에 회수한 매출이 68만 원이에요."
+                </blockquote>
+                <div class="mt-auto pt-6 border-t border-gray-100" vid="214">
+                    <p class="font-bold text-[#1A1A1A]" vid="215">박민준</p>
+                    <p class="text-sm text-gray-400 mt-1" vid="216">강남구 헤어살롱 원장, 펌·염색 전문</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-12 max-w-[1440px] mx-auto text-center" vid="217">
+        <div class="max-w-3xl mx-auto" vid="218">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF8B7215] text-peach-coral text-xs font-bold uppercase tracking-wider mb-6" vid="219">
+                05 CTA
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-[1.25] mb-6" vid="220">
+                빈 슬롯으로 매출을 잃는 건,<br vid="221"> 오늘이 마지막입니다.
+            </h2>
+            <p class="text-lg text-gray-500 leading-relaxed mb-4 font-light" vid="222">
+                14일 무료 체험 동안 직접 확인해 보세요.
+            </p>
+            <p class="text-base text-gray-400 leading-relaxed mb-10 font-light" vid="223">
+                별도 설치 없이, 지금 쓰는 예약 시스템 그대로 시작할 수 있습니다.
+            </p>
+
+            <button class="cta-glow peach-coral text-white px-10 py-5 rounded-2xl text-lg font-bold flex items-center gap-3 mx-auto justify-center" vid="224">
+                14일 무료로 시작하기 <i class="ph ph-arrow-right font-bold" vid="225"></i>
+            </button>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400 font-medium" vid="226">
+                <span class="flex items-center gap-1.5" vid="227"><i class="ph ph-check-circle text-peach-coral" vid="228"></i> 신용카드 불필요</span>
+                <span class="flex items-center gap-1.5" vid="229"><i class="ph ph-check-circle text-peach-coral" vid="230"></i> 언제든 취소 가능</span>
+                <span class="flex items-center gap-1.5" vid="231"><i class="ph ph-check-circle text-peach-coral" vid="232"></i> 지금 바로 30초 설정</span>
+            </div>
+        </div>
+    </section>
+
+</body></html>

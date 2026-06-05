@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ───────────────────────────────────────────────
+   커스텀 애니메이션 & 효과 (레퍼런스 디자인 이식)
+   Tailwind 유틸리티로 표현이 어려운 것만 여기에 둡니다.
+   디자인 토큰(색·폰트·라운드)은 tailwind.config.mjs 참고.
+   ─────────────────────────────────────────────── */
+
+/* CTA 버튼 글로우 */
+.cta-glow {
+  box-shadow: 0 10px 25px -5px rgba(255, 139, 114, 0.4);
+  transition: all 0.3s ease;
+}
+.cta-glow:hover {
+  box-shadow: 0 15px 30px -5px rgba(255, 139, 114, 0.6);
+  transform: translateY(-2px);
+}
+
+/* 카드 hover 부유 효과 (Problem·Services·Testimonials 공통) */
+.lift-card {
+  transition: all 0.3s ease;
+}
+.lift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+}
+
+/* 글래스모피즘 패널 (히어로 매출 알림) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ── 히어로 대시보드 목업 시퀀스 애니메이션 ── */
+@keyframes fillBooking {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pulseEmpty {
+  0%,
+  100% {
+    border-color: rgba(255, 139, 114, 0.3);
+    background-color: rgba(255, 139, 114, 0.02);
+  }
+  50% {
+    border-color: rgba(255, 139, 114, 0.6);
+    background-color: rgba(255, 139, 114, 0.08);
+  }
+}
+/* 빈 슬롯이 2s 후 예약 카드로 채워짐 */
+.booking-card {
+  animation: fillBooking 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+/* 매출 복구 알림이 2.8s 후 등장 */
+.earnings-panel {
+  animation: fillBooking 0.5s ease-out 2.8s forwards;
+  opacity: 0;
+}
+/* 빈 슬롯 점선 테두리 점멸 */
+.empty-slot {
+  animation: pulseEmpty 2s ease-in-out infinite;
+}
+.empty-label {
+  transition: opacity 0.3s ease;
+}
+.dashboard-container:hover .empty-label {
+  opacity: 0;
+}
+
+/* 모션 최소화를 선호하는 사용자 배려 (접근성) */
+@media (prefers-reduced-motion: reduce) {
+  .booking-card,
+  .earnings-panel {
+    animation: none;
+    opacity: 1;
+  }
+  .empty-slot {
+    animation: none;
+  }
+  .cta-glow:hover {
+    transform: none;
+  }
+}

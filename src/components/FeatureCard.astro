@@ -1,0 +1,37 @@
+---
+// Problem·Services 공통 카드.
+//  - highlight 전달 시 → 강조 결론 문장 (Problem)
+//  - metric 전달 시   → 하단 성과 지표 (Services)
+interface Props {
+  icon: string; // Phosphor 클래스 (regular)
+  title: string;
+  body: string;
+  highlight?: string;
+  metric?: { prefix: string; value: string; suffix: string };
+}
+const { icon, title, body, highlight, metric } = Astro.props;
+---
+
+<article
+  class="lift-card flex flex-col rounded-4xl border border-gray-100 bg-white p-10 shadow-sm"
+>
+  <div class="mb-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-coral/10">
+    <i class:list={['ph', icon, 'text-3xl text-coral']} aria-hidden="true"></i>
+  </div>
+  <h3 class="mb-6 text-xl font-bold leading-snug">{title}</h3>
+  <div class="space-y-4 font-light leading-relaxed text-gray-500">
+    <p>{body}</p>
+    {highlight && <p class="pt-2 font-semibold text-gray-900">{highlight}</p>}
+    {
+      metric && (
+        <div class="mt-4 border-t border-gray-100 pt-4">
+          <p class="text-sm font-medium text-gray-400">
+            {metric.prefix}{' '}
+            <span class="text-lg font-bold text-coral">{metric.value}</span>{' '}
+            {metric.suffix}
+          </p>
+        </div>
+      )
+    }
+  </div>
+</article>

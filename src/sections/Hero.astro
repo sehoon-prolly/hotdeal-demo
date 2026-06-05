@@ -1,0 +1,57 @@
+---
+import { hero } from '../data/site';
+import Button from '../components/Button.astro';
+import DashboardMockup from '../components/DashboardMockup.astro';
+---
+
+<section
+  id="top"
+  class="mx-auto grid max-w-container grid-cols-1 items-center gap-16 px-6 pb-20 pt-8 md:px-12 md:pb-24 md:pt-12 lg:grid-cols-2"
+>
+  <div class="max-w-xl">
+    <!-- 라이브 뱃지 -->
+    <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-coral/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-coral">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral opacity-75"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-coral"></span>
+      </span>
+      {hero.badge}
+    </div>
+
+    <h1 class="mb-8 text-5xl font-bold leading-[1.2] text-ink lg:text-6xl">
+      {hero.titlePre}<br />
+      <span class="text-coral">{hero.titleHighlight}</span>{hero.titlePost}
+    </h1>
+
+    <p class="mb-10 text-lg font-light leading-relaxed text-gray-500 lg:text-xl">
+      {hero.description}
+    </p>
+
+    <div class="flex flex-col items-center gap-4 sm:flex-row">
+      <Button variant="primary" href="#apply" class="w-full sm:w-auto">
+        {hero.ctaLabel}
+        <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
+      </Button>
+      <div class="flex items-center -space-x-3 sm:ml-4">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-cream bg-gray-200 text-xs font-bold">S</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-cream bg-coral text-xs font-bold text-white">J</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-cream bg-gray-800 text-xs font-bold text-white">M</div>
+        <span class="pl-6 text-sm font-medium text-gray-500">{hero.social}</span>
+      </div>
+    </div>
+
+    <!-- 통계 -->
+    <div class="mt-12 grid grid-cols-3 gap-8 border-t border-gray-200 pt-8">
+      {
+        hero.stats.map((s) => (
+          <div>
+            <div class="text-2xl font-bold">{s.value}</div>
+            <div class="mt-1 text-xs uppercase tracking-tighter text-gray-400">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <DashboardMockup />
+</section>

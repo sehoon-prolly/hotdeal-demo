@@ -1,0 +1,25 @@
+---
+// 랜딩페이지 조립 — 섹션 순서를 바꾸거나 추가/삭제하려면 여기만 수정하세요.
+import Base from '../layouts/Base.astro';
+import Nav from '../sections/Nav.astro';
+import Hero from '../sections/Hero.astro';
+import Problem from '../sections/Problem.astro';
+import TrustBar from '../sections/TrustBar.astro';
+import Services from '../sections/Services.astro';
+import Testimonials from '../sections/Testimonials.astro';
+import CTA from '../sections/CTA.astro';
+import Footer from '../sections/Footer.astro';
+---
+
+<Base>
+  <Nav />
+  <main>
+    <Hero />
+    <Problem />
+    <TrustBar />
+    <Services />
+    <Testimonials />
+    <CTA />
+  </main>
+  <Footer />
+</Base>

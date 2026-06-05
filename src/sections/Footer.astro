@@ -1,0 +1,46 @@
+---
+// 신규 푸터 (원본 디자인엔 없던 섹션 — 실제 서비스용으로 추가)
+import { brand, footer } from '../data/site';
+---
+
+<footer class="border-t border-gray-100 bg-white/50">
+  <div class="mx-auto max-w-container px-6 py-16 md:px-12">
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-4 lg:grid-cols-5">
+      <!-- 브랜드 -->
+      <div class="col-span-2">
+        <a href="#top" class="flex items-center gap-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-coral shadow-sm">
+            <i class:list={['ph-fill', brand.icon, 'text-2xl text-white']} aria-hidden="true"></i>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-ink">{brand.name}</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">{footer.tagline}</p>
+      </div>
+
+      <!-- 링크 컬럼 -->
+      {
+        footer.columns.map((col) => (
+          <div>
+            <h3 class="mb-4 text-sm font-bold text-ink">{col.title}</h3>
+            <ul class="space-y-3">
+              {col.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-sm text-gray-500 transition-colors hover:text-coral">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-2 border-t border-gray-100 pt-8 text-xs text-gray-400 md:flex-row md:items-center md:justify-between"
+    >
+      <p>{footer.business}</p>
+      <p>{footer.copyright}</p>
+    </div>
+  </div>
+</footer>
