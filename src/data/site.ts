@@ -26,6 +26,12 @@ export const hero = {
   description:
     '직전취소·노쇼가 발생하면 알림 한 번으로 대기 고객이 스스로 예약합니다.',
   ctaLabel: '문의하기',
+  stats: [
+    { value: '월 평균 8건', label: '노쇼·직전취소 발생' },
+    { value: '건당 평균 2시간', label: '매출 공백 발생' },
+    { value: '연 900만원 이상', label: '추정 손실' },
+  ],
+  statsNote: '인터뷰와 시장조사를 통한 추정치',
 };
 
 export const trustBar = {

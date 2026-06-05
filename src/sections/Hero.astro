@@ -33,6 +33,21 @@ import DashboardMockup from '../components/DashboardMockup.astro';
         <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
       </Button>
     </div>
+
+    <!-- 핵심 수치 -->
+    <div class="mt-12 border-t border-gray-200 pt-8">
+      <div class="grid grid-cols-3 gap-8">
+        {
+          hero.stats.map((s) => (
+            <div>
+              <div class="text-xl font-bold text-ink lg:text-2xl">{s.value}</div>
+              <div class="mt-1 text-xs leading-snug text-gray-400">{s.label}</div>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-4 text-[10px] text-gray-300">{hero.statsNote}</p>
+    </div>
   </div>
 
   <DashboardMockup />
