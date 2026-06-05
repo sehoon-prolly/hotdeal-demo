@@ -22,10 +22,10 @@ export const hero = {
   // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리
   titlePre: '예약이 취소되는 순간,',
   titleHighlight: '30분 안에',
-  titlePost: ' 예약이 채워집니다.',
+  titlePost: '예약이 채워집니다.',
   description:
     '직전취소·노쇼가 발생하면 알림 한 번으로 대기 고객이 스스로 예약합니다.',
-  ctaLabel: '문의하기.',
+  ctaLabel: '문의하기',
   avatars: ['S', 'J', 'M'],
   social: '500+ 스튜디오가 선택함',
   stats: [
@@ -50,8 +50,7 @@ export const cta = {
   badge: '05 CTA',
   titlePre: '매출을 잃는 건,',
   titlePost: '오늘이 마지막입니다.',
-  sub1: '직접 확인해 보세요.',
-  sub2: '별도 설치 없이, 지금 쓰는 예약 시스템 그대로 시작할 수 있습니다.',
+  sub1: '별도 설치 없이, 지금 쓰는 예약 시스템 그대로 시작할 수 있습니다.',
   buttonLabel: '문의하기',
   badges: ['결제 불필요', '언제든 취소 가능', '지금 바로 30초 설정'],
 };
