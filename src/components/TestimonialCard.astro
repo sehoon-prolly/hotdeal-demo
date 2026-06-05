@@ -13,10 +13,10 @@ const { quote, name, role } = Astro.props;
   <div class="mb-8">
     <i class="ph ph-quotes text-4xl text-coral" aria-hidden="true"></i>
   </div>
-  <blockquote class=”mb-8 text-2xl font-medium leading-relaxed text-gray-800”>
+  <blockquote class=”mb-8 text-3xl font-medium leading-relaxed text-gray-800”>
     {quote}
   </blockquote>
-  <div class="mt-auto border-t border-gray-100 pt-6">
+  <div class="border-t border-gray-100 pt-6">
     {name && <p class="font-bold text-ink">{name}</p>}
     <p class="text-sm text-gray-400">{role}</p>
   </div>
