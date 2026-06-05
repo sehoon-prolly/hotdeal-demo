@@ -20,7 +20,7 @@ export const nav = {
 export const hero = {
   badge: 'Automated Booking AI',
   // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리
-  titlePre: '노쇼가 뜨는 순간,',
+  titlePre: '예약이 취소되는 순간,',
   titleHighlight: '30분 안에',
   titlePost: ' 예약이 채워집니다.',
   description:
