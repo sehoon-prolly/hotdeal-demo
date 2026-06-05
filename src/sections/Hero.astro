@@ -32,24 +32,6 @@ import DashboardMockup from '../components/DashboardMockup.astro';
         {hero.ctaLabel}
         <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
       </Button>
-      <div class="flex items-center -space-x-3 sm:ml-4">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-cream bg-gray-200 text-xs font-bold">S</div>
-        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-cream bg-coral text-xs font-bold text-white">J</div>
-        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-cream bg-gray-800 text-xs font-bold text-white">M</div>
-        <span class="pl-6 text-sm font-medium text-gray-500">{hero.social}</span>
-      </div>
-    </div>
-
-    <!-- 통계 -->
-    <div class="mt-12 grid grid-cols-3 gap-8 border-t border-gray-200 pt-8">
-      {
-        hero.stats.map((s) => (
-          <div>
-            <div class="text-2xl font-bold">{s.value}</div>
-            <div class="mt-1 text-xs uppercase tracking-tighter text-gray-400">{s.label}</div>
-          </div>
-        ))
-      }
     </div>
   </div>
 
