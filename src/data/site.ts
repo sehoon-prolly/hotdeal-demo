@@ -2,7 +2,7 @@
 // 문구를 바꾸려면 이 파일만 수정하세요. (마크업은 건드릴 필요 없음)
 
 export const brand = {
-  name: 'FillEmpty',
+  name: '앗취',
   icon: 'ph-calendar-check', // Phosphor (fill)
 };
 
@@ -78,5 +78,5 @@ export const footer = {
     },
   ],
   business: '상호: 앗취 · 대표: 홍길동 · 사업자등록번호: 000-00-00000',
-  copyright: `© ${new Date().getFullYear()} FillEmpty. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} 앗취. All rights reserved.`,
 };
