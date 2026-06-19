@@ -3,6 +3,7 @@
 
 export const brand = {
   name: '앗취',
+  tagline: '- 앗, 취소됐다!',
   icon: 'ph-calendar-check', // Phosphor (fill)
 };
 
@@ -22,13 +23,12 @@ export const hero = {
   titlePre: '예약이 취소되는 순간,',
   titleHighlight: '30분 안에',
   titlePost: '예약이 채워집니다.',
-  description:
-    '직전취소·노쇼가 발생하면 알림 한 번으로 대기 고객이 스스로 예약합니다.',
+  description: '사라지는 수익, 카톡 한줄로 채워드립니다.',
   ctaLabel: '문의하기',
   stats: [
     { value: '월 평균 6건', label: '노쇼·직전취소 발생' },
     { value: '건당 평균 2시간', label: '매출 공백 발생' },
-    { value: '연 900만원 이상', label: '추정 손실' },
+    { value: '연 500만원 이상', label: '취소 시간 앞뒤의 잠재 손실 포함' },
   ],
   statsNote: '인터뷰와 시장조사를 통한 추정치',
 };
@@ -54,7 +54,7 @@ export const cta = {
 };
 
 export const footer = {
-  tagline: '노쇼·직전취소로 비는 슬롯을, 알림 한 번으로 다시 채웁니다.',
+  tagline: '사라지는 수익, 카톡 한줄로 채워드립니다.',
   columns: [
     {
       title: '서비스',
@@ -82,6 +82,6 @@ export const footer = {
       ],
     },
   ],
-  business: '상호: 앗취 · 대표: 홍길동 · 사업자등록번호: 000-00-00000',
+  business: '상호: 앗취 · 대표:  · 사업자등록번호: ',
   copyright: `© ${new Date().getFullYear()} 앗취. All rights reserved.`,
 };
