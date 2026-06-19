@@ -27,7 +27,7 @@ const { icon, title, body, step, example, highlight, metric } = Astro.props;
   </div>
   <h3 class="mb-6 text-xl font-bold leading-snug">{title}</h3>
   <div class="space-y-4 font-light leading-relaxed text-gray-500">
-    <p>{body}</p>
+    <p set:html={body}></p>
     {
       example && (
         <p class="rounded-xl bg-coral/5 px-4 py-3 text-sm font-medium text-gray-600">
