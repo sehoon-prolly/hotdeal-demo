@@ -1,13 +1,11 @@
 ---
 import Section from '../components/Section.astro';
-import SectionBadge from '../components/SectionBadge.astro';
 import Button from '../components/Button.astro';
 import { cta } from '../data/site';
 ---
 
 <Section class="text-center">
   <div class="mx-auto max-w-3xl">
-    <SectionBadge>{cta.badge}</SectionBadge>
     <h2 class="mb-6 text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">
       {cta.titlePre}<br />{cta.titlePost}
     </h2>

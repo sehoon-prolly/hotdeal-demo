@@ -9,7 +9,6 @@ export const brand = {
 export const nav = {
   links: [
     { label: '주요 기능', href: '#services' },
-    { label: '리뷰', href: '#testimonials' },
     { label: '요금제', href: '#pricing' },
     { label: '도움말', href: '#help' },
   ],
@@ -27,7 +26,7 @@ export const hero = {
     '직전취소·노쇼가 발생하면 알림 한 번으로 대기 고객이 스스로 예약합니다.',
   ctaLabel: '문의하기',
   stats: [
-    { value: '월 평균 8건', label: '노쇼·직전취소 발생' },
+    { value: '월 평균 6건', label: '노쇼·직전취소 발생' },
     { value: '건당 평균 2시간', label: '매출 공백 발생' },
     { value: '연 900만원 이상', label: '추정 손실' },
   ],

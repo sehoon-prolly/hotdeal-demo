@@ -11,7 +11,7 @@ export const services: Service[] = [
   {
     icon: 'ph-lightning',
     title: '① 취소 감지 즉시 핫딜 알림 자동 발송',
-    body: '노쇼·직전취소가 확인되면 3분 이내에 대기 고객에게 핫딜 알림이 자동으로 나갑니다. 카톡 한 줄이면 충분합니다.',
+    body: '노쇼·직전취소가 확인되면 3분 이내에 대기 고객에게 핫딜 알림이 자동으로 나갑니다. 매장에선 카톡 한 줄이면 충분합니다.',
     metric: { prefix: '', value: '', suffix: '' },
   },
   {

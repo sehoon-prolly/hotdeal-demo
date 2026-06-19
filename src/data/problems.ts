@@ -10,7 +10,7 @@ export interface Problem {
 export const problems: Problem[] = [
   {
     icon: 'ph-receipt-x',
-    title: '① 직전취소/노쇼 1건이 그날 매출 10만~18만 원을 통째로 지웁니다',
+    title: '① 펑크 1건이 그날 매출 10만~18만 원을 통째로 지웁니다',
     body: '젤네일 1건(4~8만 원), 펌·염색 1건(12~18만 원) : 직전취소가 바로 삭제하는 매출. 앞뒤로 예약이 막혀서 실제 손실은 더욱 커집니다.',
     highlight: '한 달에 3건만 발생해도 연간 손실은 180만 원을 넘습니다.',
   },
