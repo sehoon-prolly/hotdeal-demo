@@ -9,9 +9,10 @@ export const brand = {
 
 export const nav = {
   links: [
-    { label: '주요 기능', href: '#services' },
-    { label: '요금제', href: '#pricing' },
+    { label: '프로세스', href: '#services' },
+    { label: '운영 현황', href: '#status' },
     { label: '도움말', href: '#help' },
+    { label: '문의하기', href: '#contact' },
   ],
   loginLabel: '로그인',
   ctaLabel: '파트너 신청하기',
