@@ -17,7 +17,7 @@ export const nav = {
     { label: '문의하기', href: contactFormUrl },
   ],
   loginLabel: '로그인',
-  ctaLabel: '파트너 신청하기',
+  ctaLabel: '손실 빠르게 메우기',
 };
 
 export const hero = {
@@ -27,7 +27,7 @@ export const hero = {
   titleHighlight: '30분 안에',
   titlePost: '예약이 채워집니다.',
   description: '사라지는 수익, 카톡 한줄로 채워드립니다.',
-  ctaLabel: '문의하기',
+  ctaLabel: '손실 빠르게 메우기',
   stats: [
     { value: '월 평균 6건', label: '노쇼·직전취소 발생' },
     { value: '건당 평균 2시간', label: '매출 공백 발생' },
@@ -52,8 +52,8 @@ export const cta = {
   titlePre: '매출을 잃는 건,',
   titlePost: '오늘이 마지막입니다.',
   sub1: '별도 설치 없이, 지금 쓰는 예약 시스템 그대로 시작할 수 있습니다.',
-  buttonLabel: '문의하기',
-  badges: ['설치 불필요', '문의 비용 0원'],
+  buttonLabel: '손실 빠르게 메우기',
+  badges: ['안 채워지면 비용 0원', '약정 없음 · 해지 자유', '선입금 안전 보관', '설치 불필요'],
   closing: '사라지는 수익, 카톡 한줄로 채워드립니다.',
 };
 

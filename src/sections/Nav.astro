@@ -1,4 +1,5 @@
 ---
+// 미니멀 헤더 — 랜딩 집중을 위해 내비 링크·햄버거 제거, 로고 + 단일 CTA만 유지
 import { brand, nav, contactFormUrl } from '../data/site';
 import Button from '../components/Button.astro';
 ---
@@ -11,66 +12,10 @@ import Button from '../components/Button.astro';
         <i class:list={['ph-fill', brand.icon, 'text-2xl text-white']} aria-hidden="true"></i>
       </div>
       <span class="text-xl font-bold tracking-tight text-ink">{brand.name}</span>
-      <span class="text-xs font-medium text-gray-400">{brand.tagline}</span>
+      <span class="hidden text-xs font-medium text-gray-400 sm:inline">{brand.tagline}</span>
     </a>
 
-    <!-- 데스크톱 메뉴 -->
-    <div class="hidden items-center gap-10 text-sm font-medium text-gray-600 md:flex">
-      {
-        nav.links.map((l) => (
-          <a
-            href={l.href}
-            target={l.href.startsWith('http') ? '_blank' : undefined}
-            rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="transition-colors hover:text-coral"
-          >
-            {l.label}
-          </a>
-        ))
-      }
-    </div>
-
-    <!-- 데스크톱 버튼 -->
-    <div class="hidden items-center gap-4 md:flex">
-      <Button variant="outline" href={contactFormUrl} target="_blank">{nav.ctaLabel}</Button>
-    </div>
-
-    <!-- 모바일 토글 (CSS만으로 동작 — JS 없음) -->
-    <input type="checkbox" id="nav-toggle" class="peer hidden" />
-    <label
-      for="nav-toggle"
-      class="flex cursor-pointer items-center rounded-lg p-2 text-2xl text-ink peer-checked:hidden md:hidden"
-      aria-label="메뉴 열기"
-    >
-      <i class="ph ph-list" aria-hidden="true"></i>
-    </label>
-    <label
-      for="nav-toggle"
-      class="hidden cursor-pointer items-center rounded-lg p-2 text-2xl text-ink peer-checked:flex md:!hidden"
-      aria-label="메뉴 닫기"
-    >
-      <i class="ph ph-x" aria-hidden="true"></i>
-    </label>
-
-    <!-- 모바일 메뉴 패널 -->
-    <div
-      class="absolute left-0 right-0 top-full z-50 hidden flex-col gap-1 border-t border-gray-100 bg-cream px-6 pb-8 pt-2 shadow-lg peer-checked:flex md:!hidden"
-    >
-      {
-        nav.links.map((l) => (
-          <a
-            href={l.href}
-            target={l.href.startsWith('http') ? '_blank' : undefined}
-            rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="rounded-lg px-2 py-3 text-base font-medium text-gray-700 hover:bg-coral/10 hover:text-coral"
-          >
-            {l.label}
-          </a>
-        ))
-      }
-      <div class="mt-3 flex flex-col gap-3">
-        <Button variant="outline" href={contactFormUrl} target="_blank" class="w-full">{nav.ctaLabel}</Button>
-      </div>
-    </div>
+    <!-- 단일 CTA -->
+    <Button variant="outline" href={contactFormUrl} target="_blank">{nav.ctaLabel}</Button>
   </nav>
 </header>
