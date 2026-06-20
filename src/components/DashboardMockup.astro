@@ -13,10 +13,10 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
   <div class="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-gold opacity-[0.05] blur-3xl"></div>
 
   <div
-    class="relative aspect-[4/3] w-full max-w-[620px] overflow-hidden rounded-4xl border border-gray-100 bg-white shadow-card"
+    class="relative aspect-auto w-full max-w-[620px] overflow-hidden rounded-4xl border border-gray-100 bg-white shadow-card lg:aspect-[4/3]"
   >
     <!-- 헤더 -->
-    <div class="flex items-center justify-between border-b border-gray-50 bg-[#FBFBFB] px-8 py-6">
+    <div class="flex items-center justify-between border-b border-gray-50 bg-[#FBFBFB] px-5 py-4 lg:px-8 lg:py-6">
       <div class="flex items-center gap-4">
         <div class="flex gap-1.5">
           <div class="h-3 w-3 rounded-full bg-red-200"></div>
@@ -39,7 +39,7 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
     </div>
 
     <!-- 타임라인 -->
-    <div class="flex h-full flex-col p-8">
+    <div class="flex h-full flex-col p-5 lg:p-8">
       <div class="relative grid flex-grow grid-cols-[80px_1fr] gap-6">
         <!-- 시간축 -->
         <div class="space-y-[74px] pt-1">
@@ -121,7 +121,7 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
 
     <!-- 매출 복구 알림 (2.8s 후 등장) -->
     <div
-      class="earnings-panel glass-panel absolute bottom-8 right-8 z-30 flex items-center gap-4 rounded-2xl border border-white/50 p-4 shadow-xl"
+      class="earnings-panel glass-panel absolute bottom-4 right-4 z-30 flex items-center gap-4 rounded-2xl border border-white/50 p-4 shadow-xl lg:bottom-8 lg:right-8"
     >
       <div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white shadow-lg shadow-green-200">
         <i class="ph ph-trend-up text-xl" aria-hidden="true"></i>
