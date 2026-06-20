@@ -13,7 +13,6 @@ export const brand = {
 export const nav = {
   links: [
     { label: '프로세스', href: '#services' },
-    { label: '운영 현황', href: '#status' },
     { label: '도움말', href: '#help' },
     { label: '문의하기', href: contactFormUrl },
   ],
@@ -54,7 +53,8 @@ export const cta = {
   titlePost: '오늘이 마지막입니다.',
   sub1: '별도 설치 없이, 지금 쓰는 예약 시스템 그대로 시작할 수 있습니다.',
   buttonLabel: '문의하기',
-  badges: ['결제 불필요', '언제든 취소 가능', '지금 바로 30초 설정'],
+  badges: ['추가 설치 필요 x', '문의 비용 x'],
+  closing: '사라지는 수익, 카톡 한줄로 채워드립니다.',
 };
 
 export const footer = {
