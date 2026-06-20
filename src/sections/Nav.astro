@@ -1,5 +1,5 @@
 ---
-import { brand, nav } from '../data/site';
+import { brand, nav, contactFormUrl } from '../data/site';
 import Button from '../components/Button.astro';
 ---
 
@@ -18,7 +18,12 @@ import Button from '../components/Button.astro';
     <div class="hidden items-center gap-10 text-sm font-medium text-gray-600 md:flex">
       {
         nav.links.map((l) => (
-          <a href={l.href} class="transition-colors hover:text-coral">
+          <a
+            href={l.href}
+            target={l.href.startsWith('http') ? '_blank' : undefined}
+            rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="transition-colors hover:text-coral"
+          >
             {l.label}
           </a>
         ))
@@ -27,7 +32,7 @@ import Button from '../components/Button.astro';
 
     <!-- 데스크톱 버튼 -->
     <div class="hidden items-center gap-4 md:flex">
-      <Button variant="outline" href="#apply">{nav.ctaLabel}</Button>
+      <Button variant="outline" href={contactFormUrl} target="_blank">{nav.ctaLabel}</Button>
     </div>
 
     <!-- 모바일 토글 (CSS만으로 동작 — JS 없음) -->
@@ -55,6 +60,8 @@ import Button from '../components/Button.astro';
         nav.links.map((l) => (
           <a
             href={l.href}
+            target={l.href.startsWith('http') ? '_blank' : undefined}
+            rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             class="rounded-lg px-2 py-3 text-base font-medium text-gray-700 hover:bg-coral/10 hover:text-coral"
           >
             {l.label}
@@ -62,7 +69,7 @@ import Button from '../components/Button.astro';
         ))
       }
       <div class="mt-3 flex flex-col gap-3">
-        <Button variant="outline" href="#apply" class="w-full">{nav.ctaLabel}</Button>
+        <Button variant="outline" href={contactFormUrl} target="_blank" class="w-full">{nav.ctaLabel}</Button>
       </div>
     </div>
   </nav>

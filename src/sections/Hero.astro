@@ -1,5 +1,5 @@
 ---
-import { hero } from '../data/site';
+import { hero, contactFormUrl } from '../data/site';
 import Button from '../components/Button.astro';
 import DashboardMockup from '../components/DashboardMockup.astro';
 ---
@@ -28,7 +28,7 @@ import DashboardMockup from '../components/DashboardMockup.astro';
     </p>
 
     <div class="flex flex-col items-center gap-4 sm:flex-row">
-      <Button variant="primary" href="#apply" class="w-full sm:w-auto">
+      <Button variant="primary" href={contactFormUrl} target="_blank" class="w-full sm:w-auto">
         {hero.ctaLabel}
         <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
       </Button>

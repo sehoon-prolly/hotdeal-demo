@@ -1,7 +1,7 @@
 ---
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
-import { cta } from '../data/site';
+import { cta, contactFormUrl } from '../data/site';
 ---
 
 <Section id="contact" class="text-center reveal">
@@ -11,7 +11,7 @@ import { cta } from '../data/site';
     </h2>
     <p class="mb-10 text-lg font-light leading-relaxed text-gray-500">{cta.sub1}</p>
 
-    <Button variant="primary" href="#apply">
+    <Button variant="primary" href={contactFormUrl} target="_blank">
       {cta.buttonLabel}
       <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
     </Button>

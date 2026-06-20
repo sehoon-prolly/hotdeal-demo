@@ -1,6 +1,9 @@
 // 사이트 전역 콘텐츠 — 브랜드, 내비게이션, 히어로, 신뢰바, CTA, 푸터
 // 문구를 바꾸려면 이 파일만 수정하세요. (마크업은 건드릴 필요 없음)
 
+// 문의/리드 수집 폼 (Tally) — 모든 '문의하기'·'파트너 신청하기' CTA가 이 주소로 새 탭 연결됩니다.
+export const contactFormUrl = 'https://tally.so/r/0QGe5j';
+
 export const brand = {
   name: '앗취',
   tagline: '- 앗, 취소됐다!',
@@ -12,7 +15,7 @@ export const nav = {
     { label: '프로세스', href: '#services' },
     { label: '운영 현황', href: '#status' },
     { label: '도움말', href: '#help' },
-    { label: '문의하기', href: '#contact' },
+    { label: '문의하기', href: contactFormUrl },
   ],
   loginLabel: '로그인',
   ctaLabel: '파트너 신청하기',

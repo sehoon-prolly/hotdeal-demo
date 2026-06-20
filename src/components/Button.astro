@@ -4,9 +4,11 @@ interface Props {
   variant?: 'primary' | 'outline' | 'ghost';
   href?: string;
   type?: 'button' | 'submit';
+  target?: string; // '_blank' 전달 시 새 탭 + rel 자동 부여
   class?: string;
 }
-const { variant = 'primary', href, type = 'button', class: className = '' } = Astro.props;
+const { variant = 'primary', href, type = 'button', target, class: className = '' } = Astro.props;
+const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
 
 const base = 'inline-flex items-center justify-center gap-3 font-bold transition-all';
 const variants = {
@@ -25,6 +27,8 @@ const Tag = href ? 'a' : 'button';
 <Tag
   href={href}
   type={href ? undefined : type}
+  target={href ? target : undefined}
+  rel={href ? rel : undefined}
   class:list={[base, variants[variant], className]}
 >
   <slot />
