@@ -23,9 +23,9 @@ export const nav = {
 export const hero = {
   badge: '미용실·네일샵 노쇼 자동 채움',
   // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리
-  titlePre: '예약이 취소되는 순간,',
-  titleHighlight: '30분 안에',
-  titlePost: '예약이 채워집니다.',
+  titleLine1: '예약이 취소돼도,',
+  titleNumber: '30분',
+  titleRest: ' 안에 다시 채워집니다.',
   description: '사라지는 수익, 카톡 한줄로 채워드립니다.',
   ctaLabel: '손실 빠르게 메우기',
   stats: [
