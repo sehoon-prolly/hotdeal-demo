@@ -2,6 +2,7 @@
 // FAQ — 2단 레이아웃(좌: 제목·안내 / 우: 아코디언). 네이티브 <details>로 JS 0.
 // 답변은 set:html 렌더(부분 강조 <strong> 지원). caret 회전은 global.css.
 import Section from '../components/Section.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import { faqs } from '../data/faq';
 import { contactFormUrl } from '../data/site';
 ---
@@ -10,6 +11,7 @@ import { contactFormUrl } from '../data/site';
   <div class="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
     <!-- 좌: 제목 + 문의 카드 -->
     <div>
+      <Eyebrow>도움말</Eyebrow>
       <h2 class="text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">자주 묻는 질문</h2>
       <p class="mt-4 text-base font-light leading-relaxed text-gray-500">
         더 궁금한 점은 편하게 문의해 주세요.
@@ -28,7 +30,7 @@ import { contactFormUrl } from '../data/site';
           href={contactFormUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-coral px-6 py-3.5 text-base font-bold text-white transition-all hover:gap-3"
+          class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-coral-dark px-6 py-3.5 text-base font-bold text-white transition-all hover:gap-3"
         >
           문의하기 <i class="ph ph-arrow-right" aria-hidden="true"></i>
         </a>

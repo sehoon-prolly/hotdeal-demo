@@ -1,0 +1,18 @@
+---
+// 섹션 제목 위 작은 라벨 — 위계·스캔성을 위한 eyebrow.
+// 코랄 액센트 + 약한 자간. 좌측 짧은 바로 '라벨'임을 시각화.
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<p
+  class:list={[
+    'mb-4 flex items-center gap-2 text-sm font-bold tracking-[0.12em] text-coral',
+    className,
+  ]}
+>
+  <span class="h-px w-6 bg-coral" aria-hidden="true"></span>
+  <slot />
+</p>

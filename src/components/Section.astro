@@ -1,18 +1,24 @@
 ---
-// 공통 섹션 래퍼 — 최대 폭·좌우/상하 여백을 한 곳에서 관리 (반응형 패딩 포함)
+// 공통 섹션 래퍼 — 최대 폭·여백을 한 곳에서 관리.
+// bg로 풀폭 배경 밴드를 교차(cream/sand)시켜 섹션 리듬을 만든다.
+// 배경은 바깥 <section>(풀폭), 콘텐츠 패딩·reveal은 안쪽 div에 둔다
+//  → reveal의 translate가 배경 밴드를 흔들지 않음.
 interface Props {
   id?: string;
   class?: string;
+  bg?: 'cream' | 'sand';
 }
-const { id, class: className = '' } = Astro.props;
+const { id, class: className = '', bg = 'cream' } = Astro.props;
+const bgClass = bg === 'sand' ? 'bg-sand' : 'bg-cream';
 ---
 
-<section
-  id={id}
-  class:list={[
-    'mx-auto w-full max-w-container px-6 py-20 md:px-12 md:py-32',
-    className,
-  ]}
->
-  <slot />
+<section id={id} class:list={['w-full', bgClass]}>
+  <div
+    class:list={[
+      'mx-auto w-full max-w-container px-6 py-20 md:px-12 md:py-32',
+      className,
+    ]}
+  >
+    <slot />
+  </div>
 </section>

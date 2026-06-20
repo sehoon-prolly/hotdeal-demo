@@ -8,13 +8,13 @@
    디자인 토큰(색·폰트·라운드)은 tailwind.config.mjs 참고.
    ─────────────────────────────────────────────── */
 
-/* CTA 버튼 글로우 */
+/* CTA 버튼 글로우 (진한 코랄 #FF6B4A 기준) */
 .cta-glow {
-  box-shadow: 0 10px 25px -5px rgba(255, 139, 114, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(255, 107, 74, 0.45);
   transition: all 0.3s ease;
 }
 .cta-glow:hover {
-  box-shadow: 0 15px 30px -5px rgba(255, 139, 114, 0.6);
+  box-shadow: 0 16px 32px -5px rgba(255, 107, 74, 0.6);
   transform: translateY(-2px);
 }
 
