@@ -21,7 +21,7 @@ export const nav = {
 };
 
 export const hero = {
-  badge: '미용실·네일샵 노쇼 자동 채움',
+  badge: '미용실·네일샵 빈자리 자동 채움',
   // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리
   titleLine1: '예약이 취소돼도,',
   titleNumber: '30분',
