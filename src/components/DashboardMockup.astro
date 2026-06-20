@@ -2,6 +2,9 @@
 // 히어로 우측 대시보드 목업
 // "취소 발생 → 핫딜 알림 → 자동 재예약 → 매출 복구"를 CSS 시퀀스로 재생.
 // 애니메이션 정의는 src/styles/global.css (booking-card / empty-slot / earnings-panel).
+const now = new Date();
+const days = ['일', '월', '화', '수', '목', '금', '토'];
+const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 (${days[now.getDay()]})`;
 ---
 
 <div class="dashboard-container relative">
@@ -22,7 +25,7 @@
         </div>
         <h3 class="flex items-center gap-2 font-semibold text-gray-800">
           <i class="ph ph-calendar text-gray-400" aria-hidden="true"></i>
-          2024년 3월 24일 (일)
+          {today}
         </h3>
       </div>
       <div class="flex items-center gap-2">
@@ -63,9 +66,9 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-bold text-blue-600">K</div>
             <div>
               <div class="text-sm font-semibold">김서연 고객님</div>
-              <div class="text-[10px] uppercase tracking-widest text-gray-400">Hair Cut &amp; Perm</div>
+              <div class="text-[10px] tracking-widest text-gray-400">커트 + 펌</div>
             </div>
-            <div class="ml-auto rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase text-blue-500">Confirmed</div>
+            <div class="ml-auto rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-500">예약확정</div>
           </div>
 
           <!-- 빈 슬롯 → 자동 재예약 -->
@@ -85,12 +88,12 @@
                   <div class="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/20 text-lg font-bold text-white">L</div>
                   <div>
                     <div class="text-lg font-bold text-white">이민지 고객님</div>
-                    <div class="text-xs font-medium text-white/70">Premium Hair Spa (2hr)</div>
+                    <div class="text-xs font-medium text-white/70">프리미엄 펌·염색 (2시간)</div>
                   </div>
                 </div>
                 <div class="rounded-full border border-white/30 bg-white/20 px-3 py-1.5 backdrop-blur-md">
                   <span class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-white">
-                    <i class="ph-fill ph-lightning" aria-hidden="true"></i> AI AUTOMATED
+                    <i class="ph-fill ph-lightning" aria-hidden="true"></i> AI 자동배정
                   </span>
                 </div>
               </div>
@@ -98,7 +101,7 @@
                 <div class="text-xs font-medium opacity-90">13:00 - 15:00</div>
                 <div class="flex items-center gap-2">
                   <i class="ph ph-check-circle text-xl" aria-hidden="true"></i>
-                  <span class="text-xs font-bold">RE-BOOKED</span>
+                  <span class="text-xs font-bold">재예약 완료</span>
                 </div>
               </div>
             </div>
@@ -109,7 +112,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 font-bold text-purple-600">P</div>
             <div>
               <div class="text-sm font-semibold">박지호 고객님</div>
-              <div class="text-[10px] text-gray-400">Portrait Session</div>
+              <div class="text-[10px] text-gray-400">남성 커트</div>
             </div>
           </div>
         </div>
@@ -124,7 +127,7 @@
         <i class="ph ph-trend-up text-xl" aria-hidden="true"></i>
       </div>
       <div>
-        <p class="mb-1 text-[10px] font-bold uppercase leading-none tracking-widest text-gray-400">Estimated Earnings</p>
+        <p class="mb-1 text-[10px] font-bold leading-none tracking-widest text-gray-400">예상 회수 매출</p>
         <p class="text-lg font-bold text-gray-900">
           +128,000원 <span class="ml-1 text-sm font-medium text-green-500">복구완료</span>
         </p>

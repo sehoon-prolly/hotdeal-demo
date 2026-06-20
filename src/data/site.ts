@@ -21,7 +21,7 @@ export const nav = {
 };
 
 export const hero = {
-  badge: 'Automated Booking AI',
+  badge: '미용실·네일샵 노쇼 자동 채움',
   // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리
   titlePre: '예약이 취소되는 순간,',
   titleHighlight: '30분 안에',
@@ -53,7 +53,7 @@ export const cta = {
   titlePost: '오늘이 마지막입니다.',
   sub1: '별도 설치 없이, 지금 쓰는 예약 시스템 그대로 시작할 수 있습니다.',
   buttonLabel: '문의하기',
-  badges: ['추가 설치 필요 x', '문의 비용 x'],
+  badges: ['설치 불필요', '문의 비용 0원'],
   closing: '사라지는 수익, 카톡 한줄로 채워드립니다.',
 };
 
