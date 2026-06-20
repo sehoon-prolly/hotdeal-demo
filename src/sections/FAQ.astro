@@ -8,20 +8,31 @@ import { contactFormUrl } from '../data/site';
 
 <Section id="faq" class="reveal">
   <div class="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
-    <!-- 좌: 제목 + 안내 -->
+    <!-- 좌: 제목 + 문의 카드 -->
     <div>
       <h2 class="text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">자주 묻는 질문</h2>
       <p class="mt-4 text-base font-light leading-relaxed text-gray-500">
         더 궁금한 점은 편하게 문의해 주세요.
       </p>
-      <a
-        href={contactFormUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-4 inline-flex items-center gap-1.5 font-semibold text-coral transition-all hover:gap-2.5"
-      >
-        문의하기 <i class="ph ph-arrow-right" aria-hidden="true"></i>
-      </a>
+
+      <!-- 문의 카드 (빈 공간 해소 + 전환 유도) -->
+      <div class="mt-8 rounded-3xl border border-coral/20 bg-coral/5 p-7">
+        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-coral/15">
+          <i class="ph-fill ph-chat-circle-dots text-2xl text-coral" aria-hidden="true"></i>
+        </div>
+        <p class="mt-4 text-lg font-bold text-ink">아직 궁금한 게 남으셨나요?</p>
+        <p class="mt-2 text-sm font-light leading-relaxed text-gray-500">
+          카톡 한 줄이면 상담 끝. 30초면 충분합니다.
+        </p>
+        <a
+          href={contactFormUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-coral px-6 py-3.5 text-base font-bold text-white transition-all hover:gap-3"
+        >
+          손실 빠르게 메우기 <i class="ph ph-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
 
     <!-- 우: 아코디언 -->
