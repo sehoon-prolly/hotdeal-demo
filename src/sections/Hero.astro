@@ -1,6 +1,5 @@
 ---
-import { hero, contactFormUrl } from '../data/site';
-import Button from '../components/Button.astro';
+import { hero } from '../data/site';
 import DashboardMockup from '../components/DashboardMockup.astro';
 ---
 
@@ -27,15 +26,8 @@ import DashboardMockup from '../components/DashboardMockup.astro';
       {hero.description}
     </p>
 
-    <div class="flex flex-col items-center gap-4 sm:flex-row">
-      <Button variant="primary" href={contactFormUrl} target="_blank" class="w-full sm:w-auto">
-        {hero.ctaLabel}
-        <i class="ph ph-arrow-right font-bold" aria-hidden="true"></i>
-      </Button>
-    </div>
-
     <!-- 핵심 수치 -->
-    <div class="mt-12 border-t border-gray-200 pt-8">
+    <div class="border-t border-gray-200 pt-8">
       <div class="grid grid-cols-3 gap-8">
         {
           hero.stats.map((s) => (
@@ -46,7 +38,6 @@ import DashboardMockup from '../components/DashboardMockup.astro';
           ))
         }
       </div>
-      <p class="mt-4 text-[10px] text-gray-300">{hero.statsNote}</p>
     </div>
   </div>
 

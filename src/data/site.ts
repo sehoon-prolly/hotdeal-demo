@@ -17,7 +17,7 @@ export const nav = {
     { label: '문의하기', href: contactFormUrl },
   ],
   loginLabel: '로그인',
-  ctaLabel: '손실 빠르게 메우기',
+  ctaLabel: '문의하기',
 };
 
 export const hero = {
@@ -33,7 +33,6 @@ export const hero = {
     { value: '건당 평균 2시간', label: '매출 공백 발생' },
     { value: '연 500만원 이상', label: '취소 시간 앞뒤의 잠재 손실 포함' },
   ],
-  statsNote: '인터뷰와 시장조사를 통한 추정치',
 };
 
 export const trustBar = {
