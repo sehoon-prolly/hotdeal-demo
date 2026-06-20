@@ -117,3 +117,11 @@
     }
   }
 }
+
+/* ── FAQ 아코디언 caret 회전 (JS 0) ── */
+.faq-caret {
+  transition: transform 0.3s ease;
+}
+details[open] .faq-caret {
+  transform: rotate(180deg);
+}

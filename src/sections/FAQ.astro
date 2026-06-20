@@ -1,0 +1,28 @@
+---
+// FAQ — 네이티브 <details>/<summary> 아코디언 (JS 0). caret 회전은 global.css.
+import Section from '../components/Section.astro';
+import { faqs } from '../data/faq';
+---
+
+<Section id="faq" class="reveal">
+  <div class="mb-12">
+    <h2 class="text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">자주 묻는 질문</h2>
+  </div>
+
+  <div class="mx-auto max-w-3xl space-y-4">
+    {
+      faqs.map((f) => (
+        <details class="rounded-3xl border border-gray-100 bg-white px-8 py-6 shadow-sm">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+            <span>{f.question}</span>
+            <i
+              class="ph ph-caret-down faq-caret shrink-0 text-xl text-coral"
+              aria-hidden="true"
+            />
+          </summary>
+          <p class="mt-4 font-light leading-relaxed text-gray-500">{f.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</Section>
