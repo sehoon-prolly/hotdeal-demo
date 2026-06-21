@@ -1,7 +1,7 @@
 ---
 import Section from '../components/Section.astro';
 import Eyebrow from '../components/Eyebrow.astro';
-import FeatureCard from '../components/FeatureCard.astro';
+import ServiceStep from '../components/ServiceStep.astro';
 import { services } from '../data/services';
 ---
 
@@ -12,11 +12,74 @@ import { services } from '../data/services';
       손실을 막는 3단계 프로세스
     </h2>
     <p class="mt-4 text-lg font-medium text-gray-500">
-      디자이너님은 <span class="font-bold text-coral">STEP1</span> 만 해주시면 충분합니다
+      디자이너님은 <span class="font-bold text-coral">STEP 1</span> 만 해주시면 충분합니다
     </p>
   </div>
 
   <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-    {services.map((s) => <FeatureCard {...s} />)}
+    <!-- STEP 1 : 카카오톡 채팅 목업 -->
+    <ServiceStep {...services[0]}>
+      <div class="flex h-full flex-col rounded-2xl bg-[#9bbbd4] p-4">
+        <div class="mb-3 flex items-center gap-2">
+          <div class="flex h-7 w-7 items-center justify-center rounded-full bg-white/80 text-xs font-extrabold text-[#6a90ad]">
+            앗
+          </div>
+          <span class="text-xs font-semibold text-white/95">앗취 채널</span>
+        </div>
+        <div class="flex flex-1 flex-col justify-center gap-2">
+          <div class="flex justify-end">
+            <div class="max-w-[82%] rounded-2xl rounded-tr-sm bg-[#FEE500] px-3 py-2 text-[13px] font-medium leading-snug text-gray-900 shadow-sm">
+              오늘 오후 1시~3시 타임 취소됐어요
+            </div>
+          </div>
+          <div class="flex justify-start">
+            <div class="max-w-[88%] rounded-2xl rounded-tl-sm bg-white px-3 py-2 text-[13px] leading-snug text-gray-700 shadow-sm">
+              접수됐어요! 바로 핫딜 알림 보낼게요 🚀
+            </div>
+          </div>
+        </div>
+      </div>
+    </ServiceStep>
+
+    <!-- STEP 2 : 고객 폰 핫딜 푸시 알림 목업 -->
+    <ServiceStep {...services[1]}>
+      <div class="flex h-full items-center justify-center rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-4">
+        <div class="w-full rounded-2xl bg-white/95 p-3.5 shadow-lg">
+          <div class="flex items-center gap-2">
+            <div class="flex h-6 w-6 items-center justify-center rounded-lg bg-coral">
+              <i class="ph-fill ph-calendar-check text-xs text-white" aria-hidden="true"></i>
+            </div>
+            <span class="text-[11px] font-bold text-gray-700">앗취</span>
+            <span class="ml-auto text-[10px] text-gray-400">지금</span>
+          </div>
+          <p class="mt-2.5 text-[13px] font-bold leading-snug text-gray-900">
+            📍 가까운 매장에 핫딜이 떴어요!
+          </p>
+          <p class="mt-1 text-[11px] leading-snug text-gray-500">
+            오후 1시 펌·염색 <span class="text-gray-400 line-through">120,000</span> →
+            <span class="font-bold text-coral">89,000원</span>
+          </p>
+          <span class="mt-2.5 inline-flex items-center gap-1 rounded-full bg-coral/10 px-2 py-1 text-[10px] font-bold text-coral">
+            <i class="ph ph-lock-simple" aria-hidden="true"></i> 선입금으로 예약 확정
+          </span>
+        </div>
+      </div>
+    </ServiceStep>
+
+    <!-- STEP 3 : 정산 완료 카드 목업 -->
+    <ServiceStep {...services[2]}>
+      <div class="flex h-full flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 p-4">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg shadow-green-200">
+          <i class="ph-fill ph-check-fat text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-center">
+          <p class="text-[11px] font-bold tracking-[0.15em] text-gray-400">정산 완료</p>
+          <p class="mt-0.5 text-3xl font-extrabold text-gray-900">
+            +128,000<span class="text-lg">원</span>
+          </p>
+          <p class="mt-1 text-[11px] text-gray-500">시술 중 자동 입금 완료</p>
+        </div>
+      </div>
+    </ServiceStep>
   </div>
 </Section>

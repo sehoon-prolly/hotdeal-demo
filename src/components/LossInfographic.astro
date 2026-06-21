@@ -1,0 +1,70 @@
+---
+// Problem 핵심 인포그래픽 — 줄글 대신 손실을 '보여준다'.
+//  좌: 하루 예약표에서 취소 슬롯이 ₩0이 되고 앞뒤 시간까지 막히는 모습
+//  우: 1건 → 한 달 → 1년으로 손실이 쌓이는 누적 막대
+// 전부 HTML/CSS (자산 0). 수치는 problems.ts 기조(펌·염색 ~15만 / 연 180만+)와 일치.
+---
+
+<div
+  class="grid gap-8 rounded-4xl border border-gray-100 bg-white p-6 shadow-card md:grid-cols-2 md:p-10"
+>
+  <!-- 좌: 하루 예약표 -->
+  <div>
+    <p class="mb-5 flex items-center gap-2 text-sm font-bold text-gray-700">
+      <i class="ph ph-calendar-blank text-coral" aria-hidden="true"></i> 오늘 예약 현황
+    </p>
+    <div class="space-y-2.5">
+      <!-- 정상 예약 -->
+      <div class="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3">
+        <span class="w-12 shrink-0 text-xs font-medium text-gray-400">11:00</span>
+        <span class="text-sm font-semibold text-gray-700">김OO · 커트</span>
+        <span class="ml-auto rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-500">확정</span>
+      </div>
+
+      <!-- 취소된 슬롯 → ₩0 -->
+      <div class="flex items-center gap-3 rounded-xl border-2 border-dashed border-coral/50 bg-coral/5 px-4 py-4">
+        <span class="w-12 shrink-0 text-xs font-medium text-coral/70">13:00</span>
+        <div class="min-w-0">
+          <p class="truncate text-sm font-bold text-coral line-through decoration-coral/50">
+            펌·염색 (2시간)
+          </p>
+          <p class="text-[11px] font-medium text-gray-400">직전 취소 발생</p>
+        </div>
+        <span class="ml-auto text-xl font-extrabold text-coral">₩0</span>
+      </div>
+
+      <!-- 앞뒤 막힘 -->
+      <div class="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 opacity-60">
+        <span class="w-12 shrink-0 text-xs font-medium text-gray-400">15:00</span>
+        <span class="text-sm font-medium text-gray-500">앞뒤 시간도 예약 못 받음</span>
+        <i class="ph ph-prohibit ml-auto shrink-0 text-gray-400" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- 우: 손실 누적 -->
+  <div
+    class="flex flex-col justify-center border-t border-gray-100 pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0"
+  >
+    <p class="mb-5 text-sm font-bold text-gray-700">이렇게 쌓입니다</p>
+    <div class="space-y-3">
+      <div class="flex items-end justify-between">
+        <span class="text-sm text-gray-500">취소 1건</span>
+        <span class="text-base font-bold text-gray-700">−15만원</span>
+      </div>
+      <div class="h-2 w-1/4 rounded-full bg-coral/30"></div>
+
+      <div class="flex items-end justify-between pt-1">
+        <span class="text-sm text-gray-500">한 달 3건</span>
+        <span class="text-base font-bold text-gray-700">−45만원</span>
+      </div>
+      <div class="h-2 w-1/2 rounded-full bg-coral/50"></div>
+
+      <div class="flex items-end justify-between pt-1">
+        <span class="text-sm font-semibold text-ink">1년이면</span>
+        <span class="text-2xl font-extrabold text-coral">−180만원+</span>
+      </div>
+      <div class="h-2.5 w-full rounded-full bg-coral"></div>
+    </div>
+  </div>
+</div>

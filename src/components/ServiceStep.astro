@@ -1,0 +1,21 @@
+---
+// Services 스텝 카드 — 상단에 '화면 목업'(slot), 하단에 스텝/제목/캡션.
+// 목업은 각 스텝마다 다르므로 Services.astro에서 slot으로 주입한다.
+interface Props {
+  step: string;
+  title: string;
+  caption: string;
+}
+const { step, title, caption } = Astro.props;
+---
+
+<article class="lift-card flex flex-col rounded-4xl border border-gray-100 bg-white p-6 shadow-sm">
+  <!-- 화면 목업 (고정 높이로 3개 카드 정렬 맞춤) -->
+  <div class="mb-6 h-52">
+    <slot />
+  </div>
+
+  <span class="text-sm font-bold uppercase tracking-wider text-coral">{step}</span>
+  <h3 class="mt-2 text-lg font-bold leading-snug text-ink">{title}</h3>
+  <p class="mt-2 text-sm font-light leading-relaxed text-gray-500">{caption}</p>
+</article>
