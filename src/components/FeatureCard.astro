@@ -7,7 +7,7 @@
 interface Props {
   icon: string; // Phosphor 클래스 (regular)
   title: string;
-  body: string;
+  body?: string;
   step?: string;
   example?: string;
   highlight?: string;
@@ -27,7 +27,7 @@ const { icon, title, body, step, example, highlight, metric } = Astro.props;
   </div>
   <h3 class="mb-2 text-[13px] font-bold leading-snug lg:mb-6 lg:text-xl">{title}</h3>
   <div class="space-y-2 text-[11px] font-light leading-relaxed text-gray-500 lg:space-y-4 lg:text-base">
-    <p set:html={body}></p>
+    {body && <p set:html={body} />}
     {
       example && (
         <p class="rounded-xl bg-coral/5 px-4 py-3 text-sm font-medium text-gray-600">
