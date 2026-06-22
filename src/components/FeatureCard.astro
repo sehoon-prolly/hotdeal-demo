@@ -17,16 +17,16 @@ const { icon, title, body, step, example, highlight, metric } = Astro.props;
 ---
 
 <article
-  class="lift-card flex flex-col rounded-2xl border border-gray-100 bg-white p-4 text-center shadow-sm lg:rounded-4xl lg:p-10"
+  class="lift-card flex flex-col rounded-4xl border border-gray-100 bg-white p-8 text-center shadow-sm md:p-10"
 >
-  <div class="mb-3 flex items-center justify-center gap-2 lg:mb-10 lg:gap-4">
-    <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-coral/10 lg:h-16 lg:w-16 lg:rounded-2xl">
-      <i class:list={['ph', icon, 'text-lg text-coral lg:text-3xl']} aria-hidden="true"></i>
+  <div class="mb-7 flex items-center justify-center gap-4 md:mb-10">
+    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-coral/10 md:h-16 md:w-16">
+      <i class:list={['ph', icon, 'text-2xl text-coral md:text-3xl']} aria-hidden="true"></i>
     </div>
     {step && <span class="text-base font-bold uppercase tracking-wider text-coral">{step}</span>}
   </div>
-  <h3 class="mb-2 text-[13px] font-bold leading-snug lg:mb-6 lg:text-xl">{title}</h3>
-  <div class="space-y-2 text-[11px] font-light leading-relaxed text-gray-500 lg:space-y-4 lg:text-base">
+  <h3 class="mb-4 text-lg font-bold leading-snug md:mb-6 md:text-xl">{title}</h3>
+  <div class="space-y-4 font-light leading-relaxed text-gray-500">
     {body && <p set:html={body} />}
     {
       example && (

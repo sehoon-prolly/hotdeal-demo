@@ -9,13 +9,13 @@ interface Props {
 const { step, title, caption } = Astro.props;
 ---
 
-<article class="lift-card flex flex-col rounded-2xl border border-gray-100 bg-white p-2.5 text-center shadow-sm lg:rounded-4xl lg:p-6">
-  <!-- 화면 목업 (모바일은 축소·클립, 데스크톱은 기존 높이) -->
-  <div class="mb-2.5 h-32 overflow-hidden rounded-xl lg:mb-6 lg:h-52 lg:overflow-visible lg:rounded-none">
+<article class="lift-card flex flex-col rounded-4xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+  <!-- 화면 목업 (고정 높이로 카드 정렬 맞춤) -->
+  <div class="mb-6 h-52">
     <slot />
   </div>
 
-  <span class="text-[10px] font-bold uppercase tracking-wider text-coral lg:text-sm">{step}</span>
-  <h3 class="mt-1 text-xs font-bold leading-tight text-ink lg:mt-2 lg:text-lg lg:leading-snug">{title}</h3>
-  <p class="mt-1 text-[10px] font-light leading-snug text-gray-500 lg:mt-2 lg:text-sm lg:leading-relaxed">{caption}</p>
+  <span class="text-sm font-bold uppercase tracking-wider text-coral">{step}</span>
+  <h3 class="mt-2 text-lg font-bold leading-snug text-ink">{title}</h3>
+  <p class="mt-2 text-sm font-light leading-relaxed text-gray-500">{caption}</p>
 </article>
