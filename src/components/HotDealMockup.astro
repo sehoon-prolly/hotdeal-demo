@@ -5,38 +5,38 @@ const days = ['일', '월', '화', '수', '목', '금', '토'];
 const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]}요일`;
 ---
 
-<div class="dashboard-container group relative mx-auto max-w-[420px]">
+<div class="dashboard-container group relative mx-auto max-w-[480px]">
   <!-- 배경 blur blob (코랄/골드 글로우) -->
-  <div class="absolute -right-12 -top-12 h-72 w-72 rounded-full bg-coral opacity-[0.16] blur-3xl"></div>
-  <div class="absolute -bottom-12 -left-12 h-72 w-72 rounded-full bg-gold opacity-[0.09] blur-3xl"></div>
+  <div class="absolute -right-12 -top-12 h-80 w-80 rounded-full bg-coral opacity-[0.16] blur-3xl"></div>
+  <div class="absolute -bottom-12 -left-12 h-80 w-80 rounded-full bg-gold opacity-[0.09] blur-3xl"></div>
 
-  <!-- 다크 잠금화면 + 핫딜 푸시 알림 -->
+  <!-- 다크 잠금화면 + 핫딜 푸시 알림 (hero-phone = 스크롤 뷰 타임라인 기준) -->
   <div
-    class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-gray-800 to-gray-900 px-6 pb-9 pt-7 shadow-float transition-transform duration-500 ease-out group-hover:-translate-y-1.5"
+    class="hero-phone relative overflow-hidden rounded-[2.75rem] bg-gradient-to-br from-gray-800 to-gray-900 px-7 pb-12 pt-9 shadow-float transition-transform duration-500 ease-out group-hover:-translate-y-1.5"
   >
     <!-- 잠금화면 상단 시계 -->
-    <div class="mb-8 text-center text-white">
-      <p class="text-xs font-medium text-white/50">{today}</p>
-      <p class="mt-1 text-6xl font-bold tracking-tight">9:41</p>
+    <div class="mb-12 text-center text-white">
+      <p class="text-sm font-medium text-white/50">{today}</p>
+      <p class="mt-1 text-7xl font-bold tracking-tight">12:40</p>
     </div>
 
-    <!-- 핫딜 알림 카드 -->
-    <div class="rounded-3xl bg-white/95 p-5 shadow-xl">
+    <!-- 핫딜 알림 카드 — 폰이 다 드러나면 팝업 등장 (.hotdeal-pop) -->
+    <div class="hotdeal-pop rounded-3xl bg-white/95 p-6 shadow-xl">
       <div class="flex items-center gap-2.5">
-        <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-coral">
-          <i class="ph-fill ph-calendar-check text-lg text-white" aria-hidden="true"></i>
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-coral">
+          <i class="ph-fill ph-calendar-check text-xl text-white" aria-hidden="true"></i>
         </div>
-        <span class="text-sm font-bold text-gray-700">앗취</span>
+        <span class="text-base font-bold text-gray-700">앗취</span>
         <span class="ml-auto text-xs text-gray-400">지금</span>
       </div>
-      <p class="mt-4 text-lg font-bold leading-snug text-gray-900">
+      <p class="mt-4 text-xl font-bold leading-snug text-gray-900">
         📍 가까운 매장에 핫딜이 떴어요!
       </p>
-      <p class="mt-2 text-sm leading-relaxed text-gray-500">
+      <p class="mt-2 text-base leading-relaxed text-gray-500">
         오후 1시 펌·염색 <span class="text-gray-400 line-through">120,000</span> →
         <span class="font-bold text-coral">89,000원</span>
       </p>
-      <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-coral/10 px-3 py-1.5 text-xs font-bold text-coral">
+      <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-coral/10 px-3.5 py-2 text-sm font-bold text-coral">
         <i class="ph ph-lock-simple" aria-hidden="true"></i> 선입금으로 예약 확정
       </span>
     </div>
