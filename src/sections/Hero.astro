@@ -1,6 +1,6 @@
 ---
 import { hero } from '../data/site';
-import DashboardMockup from '../components/DashboardMockup.astro';
+import HotDealMockup from '../components/HotDealMockup.astro';
 ---
 
 <section
@@ -17,9 +17,8 @@ import DashboardMockup from '../components/DashboardMockup.astro';
       {hero.badge}
     </div>
 
-    <h1 class="mb-8 text-balance text-fluid-hero font-bold text-ink">
-      {hero.titleLine1}<br class="hidden sm:block" />
-      <span class="text-fluid-heronum text-coral">{hero.titleNumber}</span>{hero.titleRest}
+    <h1 class="mb-8 text-balance text-fluid-hero font-bold leading-[1.18] text-ink">
+      {hero.titleLine1}<br />{hero.titleLine2}<br /><span class="text-coral">{hero.titleAccent}</span>
     </h1>
 
     <p class="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-gray-500 lg:text-xl">
@@ -41,8 +40,8 @@ import DashboardMockup from '../components/DashboardMockup.astro';
     </div>
   </div>
 
-  <!-- 인터랙티브 목업: 텍스트 아래 중앙에 크게 (웹·모바일 공통) -->
-  <div class="mt-16 md:mt-20">
-    <DashboardMockup />
+  <!-- 핫딜 알림 목업: 텍스트 아래 중앙 / 첫 진입 시 아래에서 천천히 등장 -->
+  <div class="hero-rise mt-16 md:mt-20">
+    <HotDealMockup />
   </div>
 </section>

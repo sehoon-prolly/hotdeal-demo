@@ -22,10 +22,10 @@ export const nav = {
 
 export const hero = {
   badge: '미용실·네일샵 빈자리 자동 채움',
-  // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리
-  titleLine1: '예약이 취소돼도,',
-  titleNumber: '30분',
-  titleRest: ' 안에 다시 채워집니다.',
+  // 제목은 줄바꿈/강조 제어를 위해 조각으로 분리 (3줄, accent만 코랄)
+  titleLine1: '취소/변경된 예약',
+  titleLine2: '다시 채워드립니다',
+  titleAccent: '30분 안에',
   description: '사라지는 수익, 카톡 한줄로 채워드립니다.',
   ctaLabel: '손실 빠르게 메우기',
   stats: [

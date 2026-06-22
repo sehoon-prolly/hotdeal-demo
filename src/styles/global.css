@@ -118,6 +118,26 @@
   }
 }
 
+/* ── 히어로 목업 첫 진입 등장 (아래에서 위로 천천히, 1회) ── */
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-rise {
+  animation: heroRise 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
+    animation: none;
+  }
+}
+
 /* ── FAQ 아코디언 caret 회전 (JS 0) ── */
 .faq-caret {
   transition: transform 0.3s ease;

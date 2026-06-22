@@ -19,7 +19,7 @@ export default {
       },
       // 유동 타이포 (뷰포트 비례 — 브레이크포인트 없이 매끄럽게 스케일, min/max는 rem로 접근성 보존)
       fontSize: {
-        'fluid-hero': ['clamp(2.5rem, 12vw, 3.75rem)', { lineHeight: '1.15' }],
+        'fluid-hero': ['clamp(2rem, 9.5vw, 3.75rem)', { lineHeight: '1.18' }],
         'fluid-heronum': ['clamp(3rem, 15vw, 4.5rem)', { lineHeight: '1.1' }],
         'fluid-h2': ['clamp(1.75rem, 9vw, 3rem)', { lineHeight: '1.25' }],
       },
