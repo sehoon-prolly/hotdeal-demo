@@ -41,5 +41,8 @@ import DashboardMockup from '../components/DashboardMockup.astro';
     </div>
   </div>
 
-  <DashboardMockup />
+  <!-- 인터랙티브 목업: 데스크톱(lg)에서만 노출, 모바일에서는 숨김 -->
+  <div class="hidden lg:block">
+    <DashboardMockup />
+  </div>
 </section>

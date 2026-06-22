@@ -8,17 +8,42 @@ import { contactFormUrl } from '../data/site';
 ---
 
 <Section id="faq" class="reveal">
-  <div class="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
-    <!-- 좌: 제목 + 문의 카드 -->
-    <div>
+  <!--
+    모바일: 세로 순서 = 제목 → 아코디언 → 문의 카드 (DOM 순서대로 stack).
+    데스크톱(lg): 2단 그리드 — 좌측(제목+문의카드) / 우측(아코디언 전체높이).
+    명시적 grid 배치로 데스크톱은 기존 레이아웃 유지하면서 모바일 순서만 다르게.
+  -->
+  <div class="space-y-8 lg:grid lg:grid-cols-[1fr_1.6fr] lg:gap-x-16 lg:gap-y-8 lg:space-y-0">
+    <!-- ① 제목 + 안내 (모바일 최상단 / 데스크톱 좌상단) -->
+    <div class="lg:col-start-1 lg:row-start-1">
       <Eyebrow>도움말</Eyebrow>
       <h2 class="text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">자주 묻는 질문</h2>
       <p class="mt-4 text-base font-light leading-relaxed text-gray-500">
         더 궁금한 점은 편하게 문의해 주세요.
       </p>
+    </div>
 
-      <!-- 문의 카드 (빈 공간 해소 + 전환 유도) -->
-      <div class="mt-8 rounded-3xl border border-coral/20 bg-coral/5 p-7">
+    <!-- ② 아코디언 (모바일 가운데 / 데스크톱 우측 전체높이) -->
+    <div class="space-y-4 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+      {
+        faqs.map((f) => (
+          <details class="rounded-3xl border border-gray-100 bg-white px-6 py-5 shadow-sm lg:px-8 lg:py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-bold text-ink [&::-webkit-details-marker]:hidden lg:text-lg">
+              <span>{f.question}</span>
+              <i
+                class="ph ph-caret-down faq-caret shrink-0 text-xl text-coral"
+                aria-hidden="true"
+              />
+            </summary>
+            <p class="mt-4 text-sm font-light leading-relaxed text-gray-500 lg:text-base" set:html={f.answer} />
+          </details>
+        ))
+      }
+    </div>
+
+    <!-- ③ 문의 카드 (모바일 최하단 / 데스크톱 좌하단) -->
+    <div class="lg:col-start-1 lg:row-start-2">
+      <div class="rounded-3xl border border-coral/20 bg-coral/5 p-7">
         <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-coral/15">
           <i class="ph-fill ph-chat-circle-dots text-2xl text-coral" aria-hidden="true"></i>
         </div>
@@ -35,24 +60,6 @@ import { contactFormUrl } from '../data/site';
           문의하기 <i class="ph ph-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
-    </div>
-
-    <!-- 우: 아코디언 -->
-    <div class="space-y-4">
-      {
-        faqs.map((f) => (
-          <details class="rounded-3xl border border-gray-100 bg-white px-8 py-6 shadow-sm">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
-              <span>{f.question}</span>
-              <i
-                class="ph ph-caret-down faq-caret shrink-0 text-xl text-coral"
-                aria-hidden="true"
-              />
-            </summary>
-            <p class="mt-4 font-light leading-relaxed text-gray-500" set:html={f.answer} />
-          </details>
-        ))
-      }
     </div>
   </div>
 </Section>

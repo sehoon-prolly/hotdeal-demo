@@ -17,7 +17,7 @@ import { problems } from '../data/problems';
   <!-- 핵심 손실 인포그래픽 (줄글 대신 '보여주기') -->
   <LossInfographic />
 
-  <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+  <div class="mt-8 grid grid-cols-3 gap-2.5 lg:gap-8">
     {problems.map((p) => <FeatureCard {...p} />)}
   </div>
 </Section>
