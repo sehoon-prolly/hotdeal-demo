@@ -44,7 +44,7 @@ const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]
 </div>
 
 <script>
-  // 팝업 자리가 화면에 다 드러나면 0.7초 뒤 아래에서 위로 등장
+  // 팝업 자리가 화면에 다 드러나면 0.4초 뒤 아래에서 위로 등장
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce) {
     document.querySelectorAll('.hotdeal-pop').forEach((pop) => {
@@ -57,7 +57,7 @@ const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]
               setTimeout(() => {
                 pop.classList.remove('popup-armed');
                 pop.classList.add('popup-open');
-              }, 700);
+              }, 400);
             }
           }
         },
