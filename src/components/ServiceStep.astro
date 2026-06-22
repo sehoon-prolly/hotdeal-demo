@@ -9,7 +9,7 @@ interface Props {
 const { step, title, caption } = Astro.props;
 ---
 
-<article class="lift-card flex flex-col rounded-2xl border border-gray-100 bg-white p-2.5 shadow-sm lg:rounded-4xl lg:p-6">
+<article class="lift-card flex flex-col rounded-2xl border border-gray-100 bg-white p-2.5 text-center shadow-sm lg:rounded-4xl lg:p-6">
   <!-- 화면 목업 (모바일은 축소·클립, 데스크톱은 기존 높이) -->
   <div class="mb-2.5 h-32 overflow-hidden rounded-xl lg:mb-6 lg:h-52 lg:overflow-visible lg:rounded-none">
     <slot />

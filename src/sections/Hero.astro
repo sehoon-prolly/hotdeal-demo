@@ -5,9 +5,9 @@ import DashboardMockup from '../components/DashboardMockup.astro';
 
 <section
   id="top"
-  class="mx-auto grid max-w-container grid-cols-1 items-center gap-16 px-6 pb-20 pt-8 md:px-12 md:pb-24 md:pt-12 lg:grid-cols-2"
+  class="mx-auto max-w-container px-6 pb-20 pt-10 text-center md:px-12 md:pb-28 md:pt-16"
 >
-  <div class="max-w-xl">
+  <div class="mx-auto max-w-3xl">
     <!-- 라이브 뱃지 -->
     <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-coral/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-coral">
       <span class="relative flex h-2 w-2">
@@ -22,12 +22,12 @@ import DashboardMockup from '../components/DashboardMockup.astro';
       <span class="text-coral text-6xl lg:text-7xl">{hero.titleNumber}</span>{hero.titleRest}
     </h1>
 
-    <p class="mb-10 text-lg font-light leading-relaxed text-gray-500 lg:text-xl">
+    <p class="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-gray-500 lg:text-xl">
       {hero.description}
     </p>
 
     <!-- 핵심 수치 -->
-    <div class="border-t border-gray-200 pt-8">
+    <div class="mx-auto max-w-xl border-t border-gray-200 pt-8">
       <div class="grid grid-cols-3 gap-8">
         {
           hero.stats.map((s) => (
@@ -41,8 +41,8 @@ import DashboardMockup from '../components/DashboardMockup.astro';
     </div>
   </div>
 
-  <!-- 인터랙티브 목업: 데스크톱(lg)에서만 노출, 모바일에서는 숨김 -->
-  <div class="hidden lg:block">
+  <!-- 인터랙티브 목업: 텍스트 아래 중앙에 크게 (웹·모바일 공통) -->
+  <div class="mt-16 md:mt-20">
     <DashboardMockup />
   </div>
 </section>

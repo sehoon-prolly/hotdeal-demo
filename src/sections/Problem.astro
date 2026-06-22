@@ -7,17 +7,19 @@ import { problems } from '../data/problems';
 ---
 
 <Section class="reveal" bg="sand" tight>
-  <div class="mb-6 md:mb-12">
+  <div class="mx-auto mb-10 max-w-2xl text-center md:mb-14">
     <Eyebrow>매장의 현실</Eyebrow>
-    <h2 class="text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">
+    <h2 class="text-balance text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">
       월 노쇼 6건, 사장님 매장은 지금 괜찮으신가요?
     </h2>
   </div>
 
   <!-- 핵심 손실 인포그래픽 (줄글 대신 '보여주기') -->
-  <LossInfographic />
+  <div class="mx-auto max-w-4xl">
+    <LossInfographic />
+  </div>
 
-  <div class="mt-5 grid grid-cols-3 gap-2.5 md:mt-8 lg:gap-8">
+  <div class="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-2.5 md:mt-12 lg:gap-8">
     {problems.map((p) => <FeatureCard {...p} />)}
   </div>
 </Section>

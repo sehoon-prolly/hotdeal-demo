@@ -6,14 +6,14 @@ import { testimonials } from '../data/testimonials';
 ---
 
 <Section id="testimonials" class="reveal" bg="sand">
-  <div class="mb-20">
+  <div class="mx-auto mb-14 max-w-2xl text-center md:mb-20">
     <Eyebrow>현장의 목소리</Eyebrow>
     <h2 class="text-4xl font-bold leading-[1.25] text-ink lg:text-5xl">
       실제 사장님들의 이야기
     </h2>
   </div>
 
-  <div class="grid grid-cols-2 items-start gap-3 lg:gap-8">
+  <div class="mx-auto grid max-w-5xl grid-cols-2 items-start gap-3 lg:gap-8">
     {testimonials.map((t) => <TestimonialCard {...t} />)}
   </div>
 </Section>

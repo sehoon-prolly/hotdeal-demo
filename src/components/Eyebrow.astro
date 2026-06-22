@@ -9,10 +9,11 @@ const { class: className = '' } = Astro.props;
 
 <p
   class:list={[
-    'mb-4 flex items-center gap-2 text-sm font-bold tracking-[0.12em] text-coral',
+    'mb-4 flex items-center justify-center gap-2 text-sm font-bold tracking-[0.12em] text-coral',
     className,
   ]}
 >
   <span class="h-px w-6 bg-coral" aria-hidden="true"></span>
   <slot />
+  <span class="h-px w-6 bg-coral" aria-hidden="true"></span>
 </p>
