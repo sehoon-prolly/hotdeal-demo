@@ -38,16 +38,16 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
       </div>
     </div>
 
-    <!-- 타임라인 -->
-    <div class="flex h-full flex-col p-5 lg:p-8">
-      <div class="relative grid flex-grow grid-cols-[80px_1fr] gap-6">
+    <!-- 타임라인 (모바일 <640px 압축 / sm 이상 기존 풀사이즈) -->
+    <div class="flex h-full flex-col p-3 sm:p-5 lg:p-8">
+      <div class="relative grid flex-grow grid-cols-[44px_1fr] gap-3 sm:grid-cols-[80px_1fr] sm:gap-6">
         <!-- 시간축 -->
         <div class="space-y-[74px] pt-1">
-          <div class="text-right text-xs font-medium text-gray-400">오전 11:00</div>
-          <div class="text-right text-xs font-medium text-gray-400">오후 12:00</div>
-          <div class="text-right text-xs font-medium text-gray-400">오후 01:00</div>
-          <div class="text-right text-xs font-medium text-gray-400">오후 02:00</div>
-          <div class="text-right text-xs font-medium text-gray-400">오후 03:00</div>
+          <div class="text-right text-[9px] font-medium text-gray-400 sm:text-xs">오전 11:00</div>
+          <div class="text-right text-[9px] font-medium text-gray-400 sm:text-xs">오후 12:00</div>
+          <div class="text-right text-[9px] font-medium text-gray-400 sm:text-xs">오후 01:00</div>
+          <div class="text-right text-[9px] font-medium text-gray-400 sm:text-xs">오후 02:00</div>
+          <div class="text-right text-[9px] font-medium text-gray-400 sm:text-xs">오후 03:00</div>
         </div>
 
         <!-- 예약 슬롯 -->
@@ -62,13 +62,13 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
           </div>
 
           <!-- 확정 예약 -->
-          <div class="relative z-10 flex h-20 w-full items-center gap-4 rounded-xl border border-gray-100 bg-gray-50 p-4">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-bold text-blue-600">K</div>
-            <div>
-              <div class="text-sm font-semibold">김서연 고객님</div>
-              <div class="text-[10px] tracking-widest text-gray-400">커트 + 펌</div>
+          <div class="relative z-10 flex h-20 w-full items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 p-2.5 sm:gap-4 sm:p-4">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600 sm:h-10 sm:w-10 sm:text-base">K</div>
+            <div class="min-w-0">
+              <div class="truncate text-xs font-semibold sm:text-sm">김서연 고객님</div>
+              <div class="truncate text-[10px] tracking-widest text-gray-400">커트 + 펌</div>
             </div>
-            <div class="ml-auto rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-500">예약확정</div>
+            <div class="ml-auto shrink-0 whitespace-nowrap rounded bg-blue-50 px-1.5 py-0.5 text-[9px] font-bold text-blue-500 sm:px-2 sm:text-[10px]">예약확정</div>
           </div>
 
           <!-- 빈 슬롯 → 자동 재예약 -->
@@ -82,37 +82,37 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
               <p class="mt-1 text-[10px] text-gray-400">대기 고객 12명 알림 전송됨</p>
             </div>
 
-            <div class="booking-card absolute inset-0 z-20 flex flex-col justify-between rounded-xl bg-coral p-6 shadow-xl">
-              <div class="flex items-start justify-between">
-                <div class="flex items-center gap-3">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/20 text-lg font-bold text-white">L</div>
-                  <div>
-                    <div class="text-lg font-bold text-white">이민지 고객님</div>
-                    <div class="text-xs font-medium text-white/70">프리미엄 펌·염색 (2시간)</div>
+            <div class="booking-card absolute inset-0 z-20 flex flex-col justify-between rounded-xl bg-coral p-4 shadow-xl sm:p-6">
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+                  <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/20 text-sm font-bold text-white sm:h-12 sm:w-12 sm:text-lg">L</div>
+                  <div class="min-w-0">
+                    <div class="truncate text-[13px] font-bold text-white sm:text-lg">이민지 고객님</div>
+                    <div class="truncate text-[10px] font-medium text-white/70 sm:text-xs">프리미엄 펌·염색 (2시간)</div>
                   </div>
                 </div>
-                <div class="rounded-full border border-white/30 bg-white/20 px-3 py-1.5 backdrop-blur-md">
-                  <span class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-white">
+                <div class="shrink-0 rounded-full border border-white/30 bg-white/20 px-2 py-1 backdrop-blur-md sm:px-3 sm:py-1.5">
+                  <span class="flex items-center gap-1 whitespace-nowrap text-[9px] font-bold text-white sm:gap-1.5 sm:text-[10px] sm:tracking-widest">
                     <i class="ph-fill ph-lightning" aria-hidden="true"></i> AI 자동배정
                   </span>
                 </div>
               </div>
-              <div class="mt-auto flex items-center justify-between border-t border-white/20 pt-4 text-white">
-                <div class="text-xs font-medium opacity-90">13:00 - 15:00</div>
-                <div class="flex items-center gap-2">
-                  <i class="ph ph-check-circle text-xl" aria-hidden="true"></i>
-                  <span class="text-xs font-bold">재예약 완료</span>
+              <div class="mt-auto flex items-center justify-between border-t border-white/20 pt-2.5 text-white sm:pt-4">
+                <div class="text-[10px] font-medium opacity-90 sm:text-xs">13:00 - 15:00</div>
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                  <i class="ph ph-check-circle text-base sm:text-xl" aria-hidden="true"></i>
+                  <span class="whitespace-nowrap text-[10px] font-bold sm:text-xs">재예약 완료</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- 흐린 예약 -->
-          <div class="relative z-10 flex h-20 w-full items-center gap-4 rounded-xl border border-gray-100 bg-gray-50 p-4 opacity-50">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 font-bold text-purple-600">P</div>
-            <div>
-              <div class="text-sm font-semibold">박지호 고객님</div>
-              <div class="text-[10px] text-gray-400">남성 커트</div>
+          <div class="relative z-10 flex h-20 w-full items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 p-2.5 opacity-50 sm:gap-4 sm:p-4">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-xs font-bold text-purple-600 sm:h-10 sm:w-10 sm:text-base">P</div>
+            <div class="min-w-0">
+              <div class="truncate text-xs font-semibold sm:text-sm">박지호 고객님</div>
+              <div class="truncate text-[10px] text-gray-400">남성 커트</div>
             </div>
           </div>
         </div>
@@ -121,15 +121,15 @@ const today = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}
 
     <!-- 매출 복구 알림 (2.8s 후 등장) -->
     <div
-      class="earnings-panel glass-panel absolute bottom-4 right-4 z-30 flex items-center gap-4 rounded-2xl border border-white/50 p-4 shadow-xl lg:bottom-8 lg:right-8"
+      class="earnings-panel glass-panel absolute bottom-3 right-3 z-30 flex items-center gap-2 rounded-2xl border border-white/50 p-2.5 shadow-xl sm:gap-4 sm:p-4 lg:bottom-8 lg:right-8"
     >
-      <div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white shadow-lg shadow-green-200">
-        <i class="ph ph-trend-up text-xl" aria-hidden="true"></i>
+      <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-500 text-white shadow-lg shadow-green-200 sm:h-10 sm:w-10">
+        <i class="ph ph-trend-up text-base sm:text-xl" aria-hidden="true"></i>
       </div>
       <div>
-        <p class="mb-1 text-[10px] font-bold leading-none tracking-widest text-gray-400">예상 회수 매출</p>
-        <p class="text-lg font-bold text-gray-900">
-          +128,000원 <span class="ml-1 text-sm font-medium text-green-500">복구완료</span>
+        <p class="mb-0.5 text-[9px] font-bold leading-none tracking-widest text-gray-400 sm:mb-1 sm:text-[10px]">예상 회수 매출</p>
+        <p class="whitespace-nowrap text-sm font-bold text-gray-900 sm:text-lg">
+          +128,000원 <span class="ml-0.5 text-[10px] font-medium text-green-500 sm:ml-1 sm:text-sm">복구완료</span>
         </p>
       </div>
     </div>
