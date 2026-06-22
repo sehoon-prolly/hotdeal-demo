@@ -118,32 +118,25 @@
   }
 }
 
-/* ── 히어로 핫딜 목업: 폰(검은 화면)이 다 드러나면 알림 팝업 등장 (스크롤 기반) ──
-   미지원 브라우저·모션 최소화 사용자는 팝업이 그냥 처음부터 보입니다 (JS 0). */
-@keyframes hotdealPop {
-  from {
-    opacity: 0;
-    transform: scale(0.85) translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+/* ── 히어로 핫딜 목업: 팝업 자리가 다 드러난 뒤 1.5초 후 아래에서 위로 등장 ──
+   IntersectionObserver(JS)가 .popup-open을 붙이면 transition으로 떠오릅니다.
+   JS off·모션 최소화 사용자는 팝업이 그냥 처음부터 보입니다. */
+.hotdeal-pop {
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    /* 폰 컨테이너를 뷰 타임라인 기준으로 삼음 */
-    .hero-phone {
-      view-timeline-name: --hero-phone;
-      view-timeline-axis: block;
-    }
-    /* 폰이 거의 다 들어왔을 때(entry 88~100%) 팝업이 뜸 */
-    .hotdeal-pop {
-      animation: hotdealPop linear both;
-      animation-timeline: --hero-phone;
-      animation-range: entry 88% entry 100%;
-      transform-origin: top center;
-    }
+.hotdeal-pop.popup-armed {
+  opacity: 0;
+  transform: translateY(44px);
+}
+.hotdeal-pop.popup-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hotdeal-pop {
+    transition: none;
   }
 }
 

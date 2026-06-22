@@ -42,3 +42,28 @@ const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]
     </div>
   </div>
 </div>
+
+<script>
+  // 팝업 자리가 화면에 다 드러나면 1.5초 뒤 아래에서 위로 등장
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    document.querySelectorAll('.hotdeal-pop').forEach((pop) => {
+      pop.classList.add('popup-armed'); // 초기 숨김(아래로 내려둠)
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting && e.intersectionRatio >= 0.99) {
+              io.disconnect();
+              setTimeout(() => {
+                pop.classList.remove('popup-armed');
+                pop.classList.add('popup-open');
+              }, 1500);
+            }
+          }
+        },
+        { threshold: [0.99, 1] }
+      );
+      io.observe(pop);
+    });
+  }
+</script>
