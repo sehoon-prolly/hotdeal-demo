@@ -1,24 +1,18 @@
 ---
-// '예상 기대 효과' — 사용 방법 다음.
-// (1) 시간별(월·연간) 수익 충원 누적 그래프  (2) 신규·단골 유치 효과 비교
-// 전부 정적 SVG/CSS (런타임 JS 0). 수치는 예상치(매장 손실 인포그래픽 540만원과 정합).
+// '기대 효과' — 사용 방법 다음.
+// (1) 시간별(월·연간) 수익 충원 누적 그래프  (2) 이탈하는 신규 고객 → 단골 손님 유치 흐름
+// 전부 정적 SVG/CSS (런타임 JS 0). 수익 수치는 예상치(매장 손실 인포그래픽 540만원과 정합).
 import Section from '../components/Section.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 
 // 누적 수익 충원 곡선 좌표 (viewBox 340x180, 12개월에 걸쳐 가속 성장)
 const line =
   '30,146.9 56.4,141.2 82.7,133.8 109.1,125 135.5,115 161.8,104 188.2,92.1 214.5,79.2 240.9,65.6 267.3,51.1 293.6,35.9 320,20';
-
-// 신규/단골 유치 비교 막대 (px 높이, 도입 전=회색 / 도입 후=코랄)
-const bars = [
-  { label: '신규 고객', before: 34, after: 118 },
-  { label: '단골 고객', before: 58, after: 96 },
-];
 ---
 
 <Section id="impact" class="reveal">
   <div class="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-    <Eyebrow>예상 기대 효과</Eyebrow>
+    <Eyebrow>기대 효과</Eyebrow>
     <h2 class="text-balance text-fluid-h2 font-bold text-ink">
       도입 후, 이렇게 달라집니다
     </h2>
@@ -64,39 +58,36 @@ const bars = [
       </div>
     </div>
 
-    <!-- (2) 신규·단골 유치 효과 -->
-    <div class="rounded-4xl border border-gray-100 bg-white p-7 shadow-card md:p-8">
+    <!-- (2) 이탈하는 신규 고객 → 단골 손님 유치 흐름 -->
+    <div class="flex flex-col rounded-4xl border border-gray-100 bg-white p-7 shadow-card md:p-8">
       <div class="flex items-center gap-2 text-base font-bold text-ink">
         <i class="ph-fill ph-users-three text-coral" aria-hidden="true"></i>
-        신규·단골 유치 효과
+        신규 고객을 단골로
       </div>
-      <p class="mt-1 text-sm text-gray-500">새 손님 유입과 단골 전환이 함께 늘어납니다</p>
+      <p class="mt-1 text-sm text-gray-500">놓치던 손님을 단골로 이어갑니다</p>
 
-      <div class="mt-8 flex items-end justify-center gap-10 sm:gap-14">
-        {
-          bars.map((g) => (
-            <div class="flex flex-col items-center gap-3">
-              <div class="flex h-[130px] items-end gap-2.5">
-                <div class="w-9 rounded-t-lg bg-gray-200" style={`height:${g.before}px`} />
-                <div class="relative w-9 rounded-t-lg bg-coral" style={`height:${g.after}px`}>
-                  <span class="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-bold text-coral">
-                    <i class="ph-bold ph-arrow-up align-[-1px] text-[10px]" aria-hidden="true" />
-                  </span>
-                </div>
-              </div>
-              <span class="text-sm font-semibold text-gray-700">{g.label}</span>
-            </div>
-          ))
-        }
-      </div>
+      <div class="flex flex-1 items-center justify-center gap-3 py-8 sm:gap-5">
+        <!-- 이탈하는 신규 고객 -->
+        <div class="flex w-full max-w-[150px] flex-col items-center gap-3 rounded-2xl bg-gray-50 px-3 py-6 text-center">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200/70">
+            <i class="ph ph-user-minus text-2xl text-gray-400" aria-hidden="true"></i>
+          </span>
+          <span class="text-sm font-semibold leading-snug text-gray-500">이탈하는<br />신규 고객</span>
+        </div>
 
-      <div class="mt-6 flex items-center justify-center gap-5 text-xs text-gray-500">
-        <span class="flex items-center gap-1.5">
-          <span class="h-2.5 w-2.5 rounded-sm bg-gray-200"></span>도입 전
-        </span>
-        <span class="flex items-center gap-1.5">
-          <span class="h-2.5 w-2.5 rounded-sm bg-coral"></span>도입 후
-        </span>
+        <!-- 전환 화살표 (앗취) -->
+        <div class="flex flex-none flex-col items-center gap-1">
+          <span class="text-[11px] font-bold text-coral">앗취</span>
+          <i class="ph-bold ph-arrow-right text-2xl text-coral" aria-hidden="true"></i>
+        </div>
+
+        <!-- 단골 손님 유치 -->
+        <div class="flex w-full max-w-[150px] flex-col items-center gap-3 rounded-2xl bg-coral/5 px-3 py-6 text-center ring-1 ring-coral/20">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-coral">
+            <i class="ph-fill ph-heart text-2xl text-white" aria-hidden="true"></i>
+          </span>
+          <span class="text-sm font-bold leading-snug text-ink">단골 손님<br />유치</span>
+        </div>
       </div>
     </div>
   </div>
