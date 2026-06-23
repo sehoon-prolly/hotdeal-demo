@@ -1,0 +1,25 @@
+---
+// '예약금 솔루션의 한계' — 매장의 현실 다음, 사용 방법(앗취) 앞.
+// 예약금/위약금만으로는 빈자리 손실을 막지 못함을 보여주는 다리 섹션.
+import Section from '../components/Section.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import { depositLimits } from '../data/depositLimits';
+---
+
+<Section id="deposit-limit" class="reveal">
+  <div class="mx-auto mb-10 max-w-2xl text-center md:mb-14">
+    <Eyebrow>예약금 솔루션의 한계</Eyebrow>
+    <h2 class="text-balance text-fluid-h2 font-bold text-ink">
+      예약금을 걸어도<br />빈자리는 채워지지 않습니다
+    </h2>
+  </div>
+
+  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:gap-8 lg:grid-cols-3">
+    {depositLimits.map((d) => <FeatureCard {...d} />)}
+  </div>
+
+  <p class="mx-auto mt-10 max-w-xl text-center text-lg font-bold leading-snug text-ink md:mt-14">
+    필요한 건 돈을 묶어두는 게 아니라,<br /><span class="text-coral">빈자리를 다시 채우는 것</span>입니다.
+  </p>
+</Section>

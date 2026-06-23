@@ -14,10 +14,10 @@ export const nav = {
   links: [
     { label: '프로세스', href: '#services' },
     { label: '도움말', href: '#help' },
-    { label: '문의하기', href: contactFormUrl },
+    { label: '상담신청', href: contactFormUrl },
   ],
   loginLabel: '로그인',
-  ctaLabel: '문의하기',
+  ctaLabel: '상담신청',
 };
 
 export const hero = {
@@ -79,7 +79,7 @@ export const footer = {
       title: '지원',
       links: [
         { label: '도움말', href: '#help' },
-        { label: '문의하기', href: '#' },
+        { label: '상담신청', href: '#' },
         { label: '이용약관', href: '#' },
         { label: '개인정보처리방침', href: '#' },
       ],
