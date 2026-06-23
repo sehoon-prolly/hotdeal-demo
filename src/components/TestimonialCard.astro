@@ -8,16 +8,16 @@ const { quote, name, role } = Astro.props;
 ---
 
 <article
-  class="lift-card flex flex-col rounded-2xl border border-gray-100 bg-white p-4 text-center shadow-sm lg:rounded-4xl lg:p-10"
+  class="lift-card flex flex-col rounded-2xl border border-gray-100 bg-white p-3.5 text-center shadow-sm lg:rounded-4xl lg:p-8"
 >
-  <div class="mb-2 lg:mb-8">
-    <i class="ph ph-quotes text-2xl text-coral lg:text-4xl" aria-hidden="true"></i>
+  <div class="mb-2 lg:mb-6">
+    <i class="ph ph-quotes text-xl text-coral lg:text-3xl" aria-hidden="true"></i>
   </div>
-  <blockquote class="mb-3 text-[13px] font-medium leading-relaxed text-gray-800 lg:mb-8 lg:text-[1.434rem]">
+  <blockquote class="mb-3 text-[12px] font-medium leading-relaxed text-gray-800 lg:mb-6 lg:text-[1.15rem]">
     {quote}
   </blockquote>
-  <div class="mt-auto border-t border-gray-100 pt-3 lg:pt-6">
-    {name && <p class="text-sm font-bold text-ink lg:text-base">{name}</p>}
-    <p class="text-[11px] text-gray-400 lg:text-sm">{role}</p>
+  <div class="mt-auto border-t border-gray-100 pt-2.5 lg:pt-5">
+    {name && <p class="text-[13px] font-bold text-ink lg:text-[15px]">{name}</p>}
+    <p class="text-[10px] text-gray-400 lg:text-[13px]">{role}</p>
   </div>
 </article>
