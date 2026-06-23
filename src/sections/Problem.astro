@@ -1,9 +1,9 @@
 ---
 import Section from '../components/Section.astro';
 import Eyebrow from '../components/Eyebrow.astro';
-import FeatureCard from '../components/FeatureCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 import LossInfographic from '../components/LossInfographic.astro';
-import { problems } from '../data/problems';
+import { testimonials } from '../data/testimonials';
 ---
 
 <Section class="reveal" bg="sand" tight>
@@ -19,7 +19,8 @@ import { problems } from '../data/problems';
     <LossInfographic />
   </div>
 
-  <div class="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-5 md:mt-12 lg:grid-cols-3 lg:gap-8">
-    {problems.map((p) => <FeatureCard {...p} />)}
+  <!-- 현장 사장님들의 목소리 -->
+  <div class="mx-auto mt-8 grid max-w-5xl grid-cols-2 items-start gap-3 md:mt-12 lg:gap-8">
+    {testimonials.map((t) => <TestimonialCard {...t} />)}
   </div>
 </Section>
