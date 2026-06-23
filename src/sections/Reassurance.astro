@@ -1,6 +1,6 @@
 ---
 // '자주 묻는 걱정' — 할인이 단골/기존 관계를 해치지 않는다는 안심 + 비교표.
-// (whattime 레퍼런스 구성, 색감은 코랄 팔레트로 이식)
+// (whattime 레퍼런스 구성, 색감은 코랄 팔레트로 이식 / 페이지 톤에 맞춰 전체 중앙정렬)
 import Section from '../components/Section.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 
@@ -24,66 +24,66 @@ const rows = [
 ---
 
 <Section id="reassurance" class="reveal" bg="sand">
-  <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-    <!-- 좌: 안심 메시지 -->
-    <div>
-      <Eyebrow class="!justify-start [&>span]:hidden">자주 묻는 걱정</Eyebrow>
-      <h2 class="text-fluid-h2 font-bold leading-tight text-ink">
-        할인하면 단골이<br />기다리지 않을까요?
-      </h2>
-
-      <ul class="mt-8 space-y-6 md:mt-10">
-        {
-          points.map((p) => (
-            <li class="flex gap-3.5">
-              <span class="mt-0.5 flex h-7 w-7 flex-none items-center justify-center rounded-full bg-coral/10">
-                <i class="ph-fill ph-check-fat text-xs text-coral" aria-hidden="true" />
-              </span>
-              <div>
-                <p class="text-lg font-bold text-ink">{p.title}</p>
-                <p class="mt-1.5 leading-relaxed text-gray-500">{p.body}</p>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-
-      <p
-        class="mt-10 border-l-[3px] border-coral pl-4 text-lg font-bold leading-snug text-ink"
-      >
-        어차피 사라질 자리로<br />새 손님을 만드는 것입니다.
-      </p>
-    </div>
-
-    <!-- 우: 비교표 -->
-    <div class="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-card">
-      <!-- 헤더 -->
-      <div class="grid grid-cols-[1.05fr_1fr_1fr] text-center">
-        <div class="bg-white"></div>
-        <div class="bg-gray-50 px-3 py-5">
-          <p class="text-xs font-medium text-gray-400 md:text-sm">아무것도 안 할 때</p>
-          <p class="mt-1 text-2xl font-bold text-gray-300 md:text-3xl">0원</p>
-        </div>
-        <div class="bg-coral/5 px-3 py-5">
-          <p class="text-xs font-bold text-coral md:text-sm">앗취로 채울 때</p>
-          <p class="mt-1 text-2xl font-extrabold text-coral md:text-3xl">+매출</p>
-        </div>
-      </div>
-
-      <!-- 본문 -->
-      {
-        rows.map((r) => (
-          <div class="grid grid-cols-[1.05fr_1fr_1fr] items-center border-t border-gray-100 text-center">
-            <div class="px-4 py-4 text-left text-sm font-medium text-gray-600 md:px-6 md:text-base">
-              {r.label}
-            </div>
-            <div class="px-2 py-4 text-xs text-gray-400 md:text-sm">{r.off}</div>
-            <div class="self-stretch bg-coral/5 px-2 py-4 text-xs font-bold text-coral md:text-sm">
-              {r.on}
-            </div>
-          </div>
-        ))
-      }
-    </div>
+  <!-- 헤더 (중앙정렬) -->
+  <div class="mx-auto mb-12 max-w-2xl text-center md:mb-16">
+    <Eyebrow>자주 묻는 걱정</Eyebrow>
+    <h2 class="text-fluid-h2 font-bold text-ink">
+      할인하면 단골이<br />기다리지 않을까요?
+    </h2>
   </div>
+
+  <!-- 안심 포인트 (중앙정렬) -->
+  <div class="mx-auto grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2">
+    {
+      points.map((p) => (
+        <div class="text-center">
+          <span class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral/10">
+            <i class="ph-fill ph-check-fat text-lg text-coral" aria-hidden="true" />
+          </span>
+          <p class="text-lg font-bold text-ink">{p.title}</p>
+          <p class="mt-2 leading-relaxed text-gray-500">{p.body}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- 비교표 (중앙) -->
+  <div
+    class="mx-auto mt-12 max-w-2xl overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-card md:mt-16"
+  >
+    <!-- 헤더 -->
+    <div class="grid grid-cols-[1.05fr_1fr_1fr] text-center">
+      <div class="bg-white"></div>
+      <div class="bg-gray-50 px-3 py-5">
+        <p class="text-xs font-medium text-gray-400 md:text-sm">아무것도 안 할 때</p>
+        <p class="mt-1 text-2xl font-bold text-gray-300 md:text-3xl">0원</p>
+      </div>
+      <div class="bg-coral/5 px-3 py-5">
+        <p class="text-xs font-bold text-coral md:text-sm">앗취로 채울 때</p>
+        <p class="mt-1 text-2xl font-extrabold text-coral md:text-3xl">+매출</p>
+      </div>
+    </div>
+
+    <!-- 본문 -->
+    {
+      rows.map((r) => (
+        <div class="grid grid-cols-[1.05fr_1fr_1fr] items-center border-t border-gray-100 text-center">
+          <div class="px-4 py-4 text-left text-sm font-medium text-gray-600 md:px-6 md:text-base">
+            {r.label}
+          </div>
+          <div class="px-2 py-4 text-xs text-gray-400 md:text-sm">{r.off}</div>
+          <div class="self-stretch bg-coral/5 px-2 py-4 text-xs font-bold text-coral md:text-sm">
+            {r.on}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- 마무리 한 줄 (중앙정렬) -->
+  <p
+    class="mx-auto mt-12 max-w-xl text-center text-xl font-bold leading-snug text-ink md:mt-14"
+  >
+    어차피 사라질 자리로<br />새 손님을 만드는 것입니다.
+  </p>
 </Section>
