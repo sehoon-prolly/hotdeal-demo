@@ -6,9 +6,12 @@ const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]
 ---
 
 <div class="dashboard-container group relative mx-auto max-w-[480px]">
-  <!-- 배경 blur blob (코랄/골드 글로우) -->
-  <div class="absolute -right-12 -top-12 h-80 w-80 rounded-full bg-coral opacity-[0.16] blur-3xl"></div>
-  <div class="absolute -bottom-12 -left-12 h-80 w-80 rounded-full bg-gold opacity-[0.09] blur-3xl"></div>
+  <!-- 배경 blur blob (코랄/골드 글로우) — 글로우가 컨테이너 밖으로 새어 가로 스크롤이
+       생기지 않도록 클립 전용 레이어 안에 가둠 (폰의 그림자 shadow-float는 이 레이어 밖이라 유지) -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute -right-12 -top-12 h-80 w-80 rounded-full bg-coral opacity-[0.16] blur-3xl"></div>
+    <div class="absolute -bottom-12 -left-12 h-80 w-80 rounded-full bg-gold opacity-[0.09] blur-3xl"></div>
+  </div>
 
   <!-- 다크 잠금화면 + 핫딜 푸시 알림 (hero-phone = 스크롤 뷰 타임라인 기준) -->
   <div
