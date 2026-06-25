@@ -7,10 +7,8 @@ import Button from '../components/Button.astro';
 <header class="sticky top-0 z-50 border-b border-gray-200/60 bg-cream/80 backdrop-blur-md">
   <nav class="mx-auto flex max-w-container items-center justify-between px-6 py-3 md:px-12 md:py-4">
     <!-- 로고 -->
-    <a href="#top" class="flex items-center gap-2">
-      <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-coral shadow-sm">
-        <i class:list={['ph-fill', brand.icon, 'text-2xl text-white']} aria-hidden="true"></i>
-      </div>
+    <a href="#top" class="flex items-center gap-2.5">
+      <img src="/logo.png" alt={brand.name} class="h-9 w-auto md:h-10" />
       <span class="text-xl font-bold tracking-tight text-ink">{brand.name}</span>
       <span class="hidden text-xs font-medium text-gray-400 sm:inline">{brand.tagline}</span>
     </a>
