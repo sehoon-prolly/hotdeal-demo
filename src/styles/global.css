@@ -131,7 +131,7 @@ section[id] {
   }
 }
 
-/* ── 히어로 핫딜 목업: 팝업 자리가 다 드러난 뒤 1.5초 후 아래에서 위로 등장 ──
+/* ── 히어로 럭키딜 목업: 팝업 자리가 다 드러난 뒤 1.5초 후 아래에서 위로 등장 ──
    IntersectionObserver(JS)가 .popup-open을 붙이면 transition으로 떠오릅니다.
    JS off·모션 최소화 사용자는 팝업이 그냥 처음부터 보입니다. */
 .hotdeal-pop {

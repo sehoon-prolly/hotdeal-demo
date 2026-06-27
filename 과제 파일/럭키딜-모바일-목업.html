@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>럭키딜 — 모바일 목업 (점주용 · 고객용)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#FDFBF7', sand: '#FAF6EF', ink: '#1A1A1A',
+              coral: { DEFAULT: '#FF8B72', dark: '#FF6B4A' }, gold: '#E8AF55',
+            },
+            fontFamily: { sans: ['Inter', 'Noto Sans KR', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <style>
+      body { font-family: 'Inter', 'Noto Sans KR', sans-serif; }
+      .phone {
+        width: 300px; height: 640px; border-radius: 44px;
+        background: #fff; border: 11px solid #111827; position: relative;
+        overflow: hidden; box-shadow: 0 40px 80px -20px rgba(0,0,0,.28);
+      }
+      .island { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 92px; height: 24px; background: #111827; border-radius: 999px; z-index: 30; }
+      .statusbar { display:flex; align-items:center; justify-content:space-between; padding: 14px 22px 2px; font-size: 13px; font-weight: 700; color:#1A1A1A; }
+      .screen { height: calc(100% - 34px); overflow-y: auto; }
+      .screen::-webkit-scrollbar { display: none; }
+      .tabbar { position:absolute; bottom:0; left:0; right:0; height:58px; background:#fff; border-top:1px solid #f1f1f1; display:flex; align-items:center; justify-content:space-around; padding-bottom:6px; }
+      .tab { display:flex; flex-direction:column; align-items:center; gap:2px; font-size:10px; color:#b8b8b8; }
+      .tab.active { color:#FF6B4A; }
+      .tab i { font-size:19px; }
+      .caption { display:inline-flex; align-items:center; gap:6px; background:#FF6B4A; color:#fff; font-weight:700; font-size:13px; padding:8px 18px; border-radius:999px; }
+    </style>
+  </head>
+  <body class="bg-sand py-14">
+    <div class="mx-auto max-w-7xl px-6">
+      <header class="mb-12 text-center">
+        <p class="mb-2 inline-flex items-center gap-2 rounded-full bg-coral/10 px-4 py-1.5 text-sm font-bold text-coral">럭키딜 · No-Low Code</p>
+        <h1 class="text-3xl font-extrabold text-ink md:text-4xl">모바일 화면 목업</h1>
+        <p class="mt-3 text-gray-500">점주용 4화면 · 고객용 2화면</p>
+      </header>
+
+      <div class="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- ① 점주 홈 대시보드 -->
+        <div class="flex flex-col items-center gap-5">
+          <div class="phone" id="s1">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span></div>
+            <div class="screen px-5 pb-16">
+              <div class="flex items-center justify-between pt-1">
+                <div><p class="text-xs text-gray-400">사장님, 안녕하세요 👋</p><p class="text-lg font-extrabold text-ink">스파크헤어</p></div>
+                <i class="ph ph-bell text-xl text-gray-500"></i>
+              </div>
+              <div class="mt-4 grid grid-cols-3 gap-2">
+                <div class="rounded-2xl bg-gray-50 p-3 text-center"><p class="text-[10px] text-gray-400">오늘 매출</p><p class="mt-1 text-base font-extrabold text-ink">42만</p></div>
+                <div class="rounded-2xl bg-gray-50 p-3 text-center"><p class="text-[10px] text-gray-400">예약</p><p class="mt-1 text-base font-extrabold text-ink">5건</p></div>
+                <div class="rounded-2xl bg-coral/10 p-3 text-center"><p class="text-[10px] text-coral">빈자리</p><p class="mt-1 text-base font-extrabold text-coral">1</p></div>
+              </div>
+              <div class="mt-4 rounded-2xl border border-coral/30 bg-coral/5 p-4">
+                <p class="text-[13px] font-bold text-coral">⚠️ 13:00 펌·염색 취소 발생</p>
+                <p class="mt-1 text-[11px] leading-snug text-gray-500">2시간 빈자리가 생겼어요. 럭키딜로 바로 채워보세요.</p>
+                <button class="mt-3 w-full rounded-xl bg-coral-dark py-2.5 text-[13px] font-bold text-white">럭키딜 알림 보내기</button>
+              </div>
+              <div class="mt-4 rounded-2xl border border-gray-100 p-4">
+                <div class="flex items-center justify-between"><p class="text-[13px] font-bold text-ink">이번 주 매출</p><span class="text-[11px] font-bold text-emerald-500">▲ 12%</span></div>
+                <div class="mt-4 flex h-24 items-end justify-between gap-1.5">
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:38px"></div><span class="text-[9px] text-gray-400">월</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:30px"></div><span class="text-[9px] text-gray-400">화</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:52px"></div><span class="text-[9px] text-gray-400">수</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:44px"></div><span class="text-[9px] text-gray-400">목</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:60px"></div><span class="text-[9px] text-gray-400">금</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral" style="height:78px"></div><span class="text-[9px] font-bold text-coral">토</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:34px"></div><span class="text-[9px] text-gray-400">일</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tabbar"><div class="tab active"><i class="ph-fill ph-house"></i>홈</div><div class="tab"><i class="ph ph-calendar-blank"></i>예약</div><div class="tab"><i class="ph ph-sparkle"></i>럭키딜</div><div class="tab"><i class="ph ph-chart-bar"></i>통계</div></div>
+          </div>
+          <span class="caption">① 대시보드 (매장 데이터)</span>
+        </div>
+
+        <!-- ② 예약 관리 -->
+        <div class="flex flex-col items-center gap-5">
+          <div class="phone" id="s2">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:43</span><span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span></div>
+            <div class="screen px-5 pb-16">
+              <p class="pt-1 text-center text-base font-extrabold text-ink">예약 관리</p>
+              <div class="mt-3 flex items-center justify-between rounded-xl bg-gray-50 px-4 py-2.5"><i class="ph ph-caret-left text-gray-400"></i><p class="text-[13px] font-bold text-ink">오늘 · 6월 21일 (토)</p><i class="ph ph-caret-right text-gray-400"></i></div>
+              <div class="mt-4 space-y-3">
+                <div class="flex items-center gap-3 rounded-2xl border border-gray-100 p-3.5"><span class="text-xs font-bold text-gray-400">11:00</span><div class="flex-1"><p class="text-[13px] font-bold text-ink">김서연 · 커트+펌</p><p class="text-[11px] text-gray-400">단골 · 2시간</p></div><span class="rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-500">확정</span></div>
+                <div class="flex items-center gap-3 rounded-2xl border border-dashed border-coral/50 bg-coral/5 p-3.5"><span class="text-xs font-bold text-coral">13:00</span><div class="flex-1"><p class="text-[13px] font-bold text-ink">펌·염색 <span class="text-gray-400">(취소됨)</span></p><p class="text-[11px] text-coral">빈자리 · 럭키딜 발송 대기</p></div><span class="text-base font-extrabold text-coral">₩0</span></div>
+                <div class="flex items-center gap-3 rounded-2xl border border-gray-100 p-3.5"><span class="text-xs font-bold text-gray-400">15:00</span><div class="flex-1"><p class="text-[13px] font-bold text-ink">이민지 · 프리미엄 펌</p><p class="text-[11px] text-gray-400">신규 · 2시간</p></div><span class="rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-500">확정</span></div>
+                <div class="flex items-center gap-3 rounded-2xl border border-gray-100 p-3.5"><span class="text-xs font-bold text-gray-400">17:00</span><div class="flex-1"><p class="text-[13px] font-bold text-ink">박지호 · 남성 커트</p><p class="text-[11px] text-gray-400">단골 · 30분</p></div><span class="rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-500">확정</span></div>
+              </div>
+              <button class="mt-4 w-full rounded-xl bg-coral-dark py-3 text-[13px] font-bold text-white">+ 예약 직접 추가</button>
+            </div>
+            <div class="tabbar"><div class="tab"><i class="ph ph-house"></i>홈</div><div class="tab active"><i class="ph-fill ph-calendar-blank"></i>예약</div><div class="tab"><i class="ph ph-sparkle"></i>럭키딜</div><div class="tab"><i class="ph ph-chart-bar"></i>통계</div></div>
+          </div>
+          <span class="caption">② 예약 관리</span>
+        </div>
+
+        <!-- ③ 빈자리 럭키딜 -->
+        <div class="flex flex-col items-center gap-5">
+          <div class="phone" id="s3">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:55</span><span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span></div>
+            <div class="screen px-5 pb-16">
+              <p class="pt-1 text-center text-base font-extrabold text-ink">럭키딜</p>
+              <div class="mt-4 rounded-2xl border border-gray-100 p-4 text-center">
+                <p class="text-[11px] text-gray-400">발송한 럭키딜</p>
+                <p class="mt-1 text-[14px] font-extrabold text-ink">오늘 13:00 · 펌·염색</p>
+                <p class="text-[12px] text-gray-500">정가 120,000원 · 수수료 15%</p>
+                <div class="mt-3 grid grid-cols-3 gap-2">
+                  <div class="rounded-xl bg-gray-50 py-2.5"><p class="text-base font-extrabold text-ink">12</p><p class="text-[10px] text-gray-400">발송</p></div>
+                  <div class="rounded-xl bg-gray-50 py-2.5"><p class="text-base font-extrabold text-ink">5</p><p class="text-[10px] text-gray-400">조회</p></div>
+                  <div class="rounded-xl bg-coral/10 py-2.5"><p class="text-base font-extrabold text-coral">1</p><p class="text-[10px] text-coral">예약</p></div>
+                </div>
+              </div>
+              <div class="mt-4 rounded-2xl border border-emerald-100 bg-emerald-50 p-5 text-center">
+                <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500"><i class="ph-fill ph-check text-lg text-white"></i></div>
+                <p class="mt-2 text-[15px] font-extrabold text-ink">빈자리 충원 완료!</p>
+                <p class="mt-0.5 text-[11px] text-gray-500">이민지 고객님 재예약</p>
+                <p class="mt-2 text-xl font-extrabold text-emerald-600">102,000원 방어</p>
+                <p class="mt-0.5 text-[10px] text-gray-400">수수료 15% 차감 후 정산</p>
+              </div>
+              <button class="mt-4 w-full rounded-xl border-2 border-coral py-2.5 text-[13px] font-bold text-coral">새 빈자리 럭키딜 보내기</button>
+            </div>
+            <div class="tabbar"><div class="tab"><i class="ph ph-house"></i>홈</div><div class="tab"><i class="ph ph-calendar-blank"></i>예약</div><div class="tab active"><i class="ph-fill ph-sparkle"></i>럭키딜</div><div class="tab"><i class="ph ph-chart-bar"></i>통계</div></div>
+          </div>
+          <span class="caption">③ 빈자리 럭키딜</span>
+        </div>
+
+        <!-- ④ 매장 데이터 분석 -->
+        <div class="flex flex-col items-center gap-5">
+          <div class="phone" id="s4">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:47</span><span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span></div>
+            <div class="screen px-5 pb-16">
+              <p class="pt-1 text-center text-base font-extrabold text-ink">매장 데이터</p>
+              <div class="mt-4 rounded-2xl border border-gray-100 p-4">
+                <p class="text-center text-[11px] text-gray-400">이번 달 매출</p>
+                <p class="text-center text-2xl font-extrabold text-ink">1,180만원 <span class="text-xs font-bold text-emerald-500">▲12%</span></p>
+                <div class="mt-3 flex h-20 items-end justify-between gap-1.5">
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:30px"></div><span class="text-[9px] text-gray-400">1월</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:38px"></div><span class="text-[9px] text-gray-400">2월</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:34px"></div><span class="text-[9px] text-gray-400">3월</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:48px"></div><span class="text-[9px] text-gray-400">4월</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral/20" style="height:56px"></div><span class="text-[9px] text-gray-400">5월</span></div>
+                  <div class="flex w-full flex-col items-center gap-1"><div class="w-full rounded-t bg-coral" style="height:70px"></div><span class="text-[9px] font-bold text-coral">6월</span></div>
+                </div>
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <div class="rounded-2xl bg-gray-50 p-4 text-center"><p class="text-[10px] text-gray-400">빈자리 회복률</p><p class="mt-1 text-xl font-extrabold text-coral">72%</p></div>
+                <div class="rounded-2xl bg-gray-50 p-4 text-center"><p class="text-[10px] text-gray-400">럭키딜 회수 매출</p><p class="mt-1 text-xl font-extrabold text-coral">94만원</p></div>
+                <div class="rounded-2xl bg-gray-50 p-4 text-center"><p class="text-[10px] text-gray-400">이번 달 예약</p><p class="mt-1 text-xl font-extrabold text-ink">128건</p></div>
+                <div class="rounded-2xl bg-gray-50 p-4 text-center"><p class="text-[10px] text-gray-400">재방문 고객</p><p class="mt-1 text-xl font-extrabold text-ink">61%</p></div>
+              </div>
+            </div>
+            <div class="tabbar"><div class="tab"><i class="ph ph-house"></i>홈</div><div class="tab"><i class="ph ph-calendar-blank"></i>예약</div><div class="tab"><i class="ph ph-sparkle"></i>럭키딜</div><div class="tab active"><i class="ph-fill ph-chart-bar"></i>통계</div></div>
+          </div>
+          <span class="caption">④ 매장 데이터 분석</span>
+        </div>
+
+        <!-- ⑤ 고객 럭키딜 피드 -->
+        <div class="flex flex-col items-center gap-5">
+          <div class="phone" id="s5">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:49</span><span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span></div>
+            <div class="screen px-5 pb-16">
+              <div class="flex items-center justify-between pt-1">
+                <div><p class="text-[10px] text-gray-400">현재 위치</p><p class="text-[13px] font-bold text-ink">📍 성동구 행당동 <i class="ph ph-caret-down text-[10px]"></i></p></div>
+                <i class="ph ph-bell text-xl text-gray-500"></i>
+              </div>
+              <p class="mt-3 text-center text-base font-extrabold text-ink">지금 예약 가능한 럭키딜</p>
+              <p class="text-center text-[11px] text-gray-400">매장에서 럭키딜을 보냈어요, 무려 10%의 마일리지와 함께!</p>
+              <div class="mt-4 space-y-3">
+                <div class="overflow-hidden rounded-2xl border border-gray-100">
+                  <img src="이미지/스파크헤어.jpg" alt="스파크헤어" class="h-20 w-full object-cover" />
+                  <div class="p-3.5">
+                    <div class="flex items-start justify-between"><div><p class="text-[13px] font-bold text-ink">스파크헤어</p><p class="text-[10px] text-gray-400">펌·염색 · ⭐4.9 · 0.4km</p></div><span class="rounded-md bg-coral/10 px-1.5 py-0.5 text-[9px] font-bold text-coral">1자리 남음</span></div>
+                    <p class="mt-2 text-[14px] font-extrabold text-ink">120,000원</p>
+                    <p class="text-[11px] font-bold text-coral">🎁 마일리지 12,000원 적립 (10%)</p>
+                    <p class="mt-0.5 text-[10px] text-gray-400">🕐 오늘 13:00~15:00</p>
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-gray-100">
+                  <img src="이미지/헤어하이.jpg" alt="헤어하이" class="h-20 w-full object-cover" />
+                  <div class="p-3.5">
+                    <div class="flex items-start justify-between"><div><p class="text-[13px] font-bold text-ink">헤어하이</p><p class="text-[10px] text-gray-400">뿌리염색·클리닉 · ⭐4.8 · 0.8km</p></div><span class="rounded-md bg-coral/10 px-1.5 py-0.5 text-[9px] font-bold text-coral">2자리 남음</span></div>
+                    <p class="mt-2 text-[14px] font-extrabold text-ink">70,000원</p>
+                    <p class="text-[11px] font-bold text-coral">🎁 마일리지 7,000원 적립 (10%)</p>
+                    <p class="mt-0.5 text-[10px] text-gray-400">🕐 오늘 15:30 시작</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabbar"><div class="tab active"><i class="ph-fill ph-house"></i>홈</div><div class="tab"><i class="ph ph-sparkle"></i>럭키딜</div><div class="tab"><i class="ph ph-calendar-blank"></i>예약</div><div class="tab"><i class="ph ph-user"></i>내정보</div></div>
+          </div>
+          <span class="caption">⑤ 고객 럭키딜 피드</span>
+        </div>
+
+        <!-- ⑥ 고객 럭키딜 상세·예약 -->
+        <div class="flex flex-col items-center gap-5">
+          <div class="phone" id="s6">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:51</span><span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span></div>
+            <div class="screen pb-16">
+              <div class="flex items-center gap-3 px-5 pt-1"><i class="ph ph-arrow-left text-lg text-ink"></i><p class="text-[14px] font-bold text-ink">럭키딜 상세</p></div>
+              <img src="이미지/스파크헤어.jpg" alt="스파크헤어" class="mt-3 h-28 w-full object-cover" />
+              <div class="px-5">
+                <div class="mt-4 flex items-center justify-between"><p class="text-[15px] font-extrabold text-ink">스파크헤어</p><p class="text-[11px] text-gray-400">⭐ 4.9 · 0.4km</p></div>
+                <p class="text-[12px] text-gray-500">펌·염색 (약 2시간)</p>
+                <p class="mt-1 inline-block rounded-md bg-coral/10 px-2 py-0.5 text-[11px] font-bold text-coral">🕐 오늘 13:00~15:00</p>
+                <div class="mt-4 space-y-2 border-t border-gray-100 pt-4">
+                  <div class="flex items-center justify-between text-[13px]"><span class="text-gray-500">결제 금액</span><span class="font-extrabold text-ink">120,000원</span></div>
+                  <div class="flex items-center justify-between"><span class="text-[13px] font-bold text-coral">마일리지 적립</span><span class="text-lg font-extrabold text-coral">+12,000원 <span class="text-[11px]">(10%)</span></span></div>
+                </div>
+                <div class="mt-4 rounded-2xl bg-coral/5 p-3.5 text-[11px] leading-relaxed text-gray-500">
+                  🔒 <span class="font-bold text-ink">선입금 120,000원 (전액)</span><br />노쇼 방지를 위해 결제금액 전액을 선입금해요. 시술 후 매장에 자동 정산되며, 마일리지 12,000원은 다음 매장 방문때 쓸 수 있어요.
+                </div>
+                <button class="mt-4 w-full rounded-xl bg-coral-dark py-3 text-[14px] font-bold text-white">선입금하고 예약 확정</button>
+              </div>
+            </div>
+          </div>
+          <span class="caption">⑥ 고객 럭키딜 상세·예약</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

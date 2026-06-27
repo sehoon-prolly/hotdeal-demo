@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>럭키딜 — 알림(푸시) 목업</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <script>
+      tailwind.config = {
+        theme: { extend: {
+          colors: { cream: '#FDFBF7', sand: '#FAF6EF', ink: '#1A1A1A', coral: { DEFAULT: '#FF8B72', dark: '#FF6B4A' }, gold: '#E8AF55' },
+          fontFamily: { sans: ['Inter', 'Noto Sans KR', 'sans-serif'] },
+        } },
+      };
+    </script>
+    <style>
+      body { font-family: 'Inter', 'Noto Sans KR', sans-serif; }
+      .phone {
+        width: 300px; height: 640px; border-radius: 44px;
+        background: #fff; border: 11px solid #111827; position: relative;
+        overflow: hidden; box-shadow: 0 40px 80px -20px rgba(0,0,0,.28);
+      }
+      .island { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 92px; height: 24px; background: #111827; border-radius: 999px; z-index: 30; }
+      .caption { display:inline-flex; align-items:center; gap:6px; background:#FF6B4A; color:#fff; font-weight:700; font-size:13px; padding:8px 18px; border-radius:999px; }
+      .app { display:flex; flex-direction:column; align-items:center; gap:5px; }
+      .app .ico { height:46px; width:46px; border-radius:13px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,.12); }
+      .app .ico i { font-size:22px; color:#fff; }
+      .app span { font-size:9px; color:#f3f4f6; font-weight:500; text-shadow:0 1px 2px rgba(0,0,0,.4); }
+    </style>
+  </head>
+  <body class="bg-sand py-14">
+    <div class="mx-auto flex max-w-md flex-col items-center gap-6 px-6">
+      <header class="text-center">
+        <p class="mb-2 inline-flex items-center gap-2 rounded-full bg-coral/10 px-4 py-1.5 text-sm font-bold text-coral">럭키딜 · 고객 알림</p>
+        <h1 class="text-2xl font-extrabold text-ink">메인화면에 뜬 럭키딜 알림</h1>
+      </header>
+
+      <div class="phone" id="home">
+        <div class="island"></div>
+        <!-- 홈스크린 배경 -->
+        <div class="relative h-full bg-gradient-to-b from-[#17171c] via-[#1d1d23] to-[#0a0a0c]">
+          <!-- 상태바 (흰 글씨) -->
+          <div class="flex items-center justify-between px-6 pt-3.5 text-[13px] font-bold text-white">
+            <span>9:48</span>
+            <span class="flex items-center gap-1.5"><i class="ph-fill ph-cell-signal-full text-[13px]"></i><i class="ph-fill ph-wifi-high text-[13px]"></i><i class="ph-fill ph-battery-full text-[15px]"></i></span>
+          </div>
+
+          <!-- 앱 아이콘 그리드 -->
+          <div class="px-5 pt-9">
+            <div class="grid grid-cols-4 gap-x-3 gap-y-4">
+              <div class="app"><div class="ico bg-green-500"><i class="ph-fill ph-video-camera"></i></div><span>페이스타임</span></div>
+              <div class="app"><div class="ico bg-rose-500"><i class="ph-fill ph-calendar-blank"></i></div><span>캘린더</span></div>
+              <div class="app"><div class="ico bg-gradient-to-br from-amber-300 via-pink-400 to-purple-500"><i class="ph-fill ph-flower"></i></div><span>사진</span></div>
+              <div class="app"><div class="ico bg-gray-700"><i class="ph-fill ph-camera"></i></div><span>카메라</span></div>
+
+              <div class="app"><div class="ico bg-sky-500"><i class="ph-fill ph-cloud-sun"></i></div><span>날씨</span></div>
+              <div class="app"><div class="ico bg-gray-900"><i class="ph-fill ph-clock"></i></div><span>시계</span></div>
+              <div class="app"><div class="ico bg-emerald-500"><i class="ph-fill ph-map-trifold"></i></div><span>지도</span></div>
+              <div class="app"><div class="ico bg-amber-400"><i class="ph-fill ph-note"></i></div><span>메모</span></div>
+
+              <div class="app"><div class="ico bg-orange-400"><i class="ph-fill ph-list-checks"></i></div><span>미리알림</span></div>
+              <div class="app"><div class="ico bg-gray-800"><i class="ph-fill ph-calculator"></i></div><span>계산기</span></div>
+              <div class="app"><div class="ico bg-gray-500"><i class="ph-fill ph-gear-six"></i></div><span>설정</span></div>
+              <div class="app"><div class="ico bg-rose-400"><i class="ph-fill ph-heartbeat"></i></div><span>건강</span></div>
+
+              <div class="app"><div class="ico bg-yellow-400"><i class="ph-fill ph-chat-circle"></i></div><span>카카오톡</span></div>
+              <div class="app"><div class="ico bg-gray-900"><i class="ph-fill ph-wallet"></i></div><span>지갑</span></div>
+              <div class="app"><div class="ico bg-blue-500"><i class="ph-fill ph-storefront"></i></div><span>앱스토어</span></div>
+              <div class="app"><div class="ico bg-coral ring-2 ring-coral/40"><i class="ph-fill ph-sparkle"></i></div><span class="font-bold" style="color:#FF8B72">럭키딜</span></div>
+            </div>
+          </div>
+
+          <!-- 독 -->
+          <div class="absolute inset-x-4 bottom-5 rounded-[26px] bg-white/10 p-2.5 backdrop-blur-md">
+            <div class="flex justify-around">
+              <div class="ico bg-green-500" style="height:46px;width:46px;border-radius:13px;display:flex;align-items:center;justify-content:center"><i class="ph-fill ph-phone text-[22px] text-white"></i></div>
+              <div class="ico bg-green-400" style="height:46px;width:46px;border-radius:13px;display:flex;align-items:center;justify-content:center"><i class="ph-fill ph-chat-circle-dots text-[22px] text-white"></i></div>
+              <div class="ico bg-blue-400" style="height:46px;width:46px;border-radius:13px;display:flex;align-items:center;justify-content:center"><i class="ph-fill ph-compass text-[22px] text-white"></i></div>
+              <div class="ico bg-gradient-to-br from-pink-500 to-red-500" style="height:46px;width:46px;border-radius:13px;display:flex;align-items:center;justify-content:center"><i class="ph-fill ph-music-notes text-[22px] text-white"></i></div>
+            </div>
+          </div>
+
+          <!-- 럭키딜 푸시 알림 배너 (홈스크린 상단에 도착) -->
+          <div class="absolute inset-x-3 top-[52px] rounded-[1.4rem] bg-white/90 p-3.5 shadow-2xl backdrop-blur-xl">
+            <div class="flex items-center gap-2">
+              <div class="flex h-7 w-7 items-center justify-center rounded-[9px] bg-coral"><i class="ph-fill ph-sparkle text-sm text-white"></i></div>
+              <span class="text-[12px] font-semibold text-gray-700">럭키딜</span>
+              <span class="ml-auto text-[11px] text-gray-500">지금</span>
+            </div>
+            <p class="mt-2 text-[13.5px] font-extrabold text-gray-900">📍 스파크헤어에서 럭키딜 발송</p>
+            <p class="mt-0.5 text-[12px] text-gray-600">펌·염색 120,000원 · 오늘 13:00~15:00</p>
+            <span class="mt-1.5 inline-flex items-center gap-1 rounded-full bg-coral/10 px-2 py-0.5 text-[10px] font-bold text-coral">🎁 결제액 10% 마일리지 적립</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="caption">⑦ 고객 럭키딜 알림 (푸시)</span>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-// 히어로 목업 — '핫딜 알림 발송' 푸시 알림 (사용방법 STEP2와 동일 컨셉, 잠금화면 스케일)
+// 히어로 목업 — '럭키딜 알림 발송' 푸시 알림 (사용방법 STEP2와 동일 컨셉, 잠금화면 스케일)
 const now = new Date();
 const days = ['일', '월', '화', '수', '목', '금', '토'];
 const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]}요일`;
@@ -13,7 +13,7 @@ const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]
     <div class="absolute -bottom-12 -left-12 h-80 w-80 rounded-full bg-gold opacity-[0.09] blur-3xl"></div>
   </div>
 
-  <!-- 다크 잠금화면 + 핫딜 푸시 알림 (hero-phone = 스크롤 뷰 타임라인 기준) -->
+  <!-- 다크 잠금화면 + 럭키딜 푸시 알림 (hero-phone = 스크롤 뷰 타임라인 기준) -->
   <div
     class="hero-phone relative overflow-hidden rounded-[2.75rem] bg-gradient-to-br from-gray-800 to-gray-900 px-7 pb-12 pt-9 shadow-float transition-transform duration-500 ease-out group-hover:-translate-y-1.5"
   >
@@ -23,24 +23,24 @@ const today = `${now.getMonth() + 1}월 ${now.getDate()}일 ${days[now.getDay()]
       <p class="mt-1 text-7xl font-bold tracking-tight">12:40</p>
     </div>
 
-    <!-- 핫딜 알림 카드 — 폰이 다 드러나면 팝업 등장 (.hotdeal-pop) -->
+    <!-- 럭키딜 알림 카드 — 폰이 다 드러나면 팝업 등장 (.hotdeal-pop) -->
     <div class="hotdeal-pop rounded-3xl bg-white/95 p-6 shadow-xl">
       <div class="flex items-center gap-2.5">
         <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-coral">
           <i class="ph-fill ph-calendar-check text-xl text-white" aria-hidden="true"></i>
         </div>
-        <span class="text-base font-bold text-gray-700">앗취</span>
+        <span class="text-base font-bold text-gray-700">럭키딜</span>
         <span class="ml-auto text-xs text-gray-400">지금</span>
       </div>
       <p class="mt-4 text-xl font-bold leading-snug text-gray-900">
-        📍 가까운 매장에 핫딜이 떴어요!
+        📍 럭키딜이 도착했어요!
       </p>
-      <p class="mt-2 text-base leading-relaxed text-gray-500">
-        오후 1시 펌·염색 <span class="text-gray-400 line-through">120,000</span> →
-        <span class="font-bold text-coral">89,000원</span>
+      <p class="mt-2 text-base font-bold leading-snug text-gray-900">
+        12,000원<span class="text-coral">(10%)</span> 마일리지 쌓기
       </p>
+      <p class="mt-1 text-sm text-gray-500">두 번이면 커트 한 번 무료!</p>
       <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-coral/10 px-3.5 py-2 text-sm font-bold text-coral">
-        <i class="ph ph-lock-simple" aria-hidden="true"></i> 선입금으로 예약 확정
+        <i class="ph-fill ph-sparkle" aria-hidden="true"></i> 빠르게 행운 잡기
       </span>
     </div>
   </div>

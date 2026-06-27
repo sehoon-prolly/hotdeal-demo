@@ -16,12 +16,12 @@ export const services: Service[] = [
   },
   {
     step: 'STEP 2',
-    title: '신규 고객에게 핫딜 알림 발송',
-    caption: "핫딜 가격 + '선입금'으로 노쇼 없이 빈자리 해결",
+    title: '신규 고객에게 럭키딜 발송',
+    caption: "마일리지 적립 + 전액 '선입금'으로 노쇼 없이 빈자리 해결",
   },
   {
     step: 'STEP 3',
-    title: '시술 중간 바로 정산',
-    caption: '받은 선입금은 저희가 보관, 시술 중 바로 정산',
+    title: '예약 완료 · 선입금 안전 보관',
+    caption: '받은 선입금은 저희가 안전하게 보관 후 정산',
   },
 ];
